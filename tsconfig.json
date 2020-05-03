@@ -1,0 +1,39 @@
+{
+  "compilerOptions": {
+    "outDir": "dist",
+    "resolveJsonModule": true,
+    "module": "esnext",
+    "moduleResolution": "node",
+    "target": "es6",
+    "importHelpers": true,
+    "strict": false,
+    "sourceMap": true,
+    "allowJs": true,
+    "experimentalDecorators": true,
+    "baseUrl": "./",
+    "paths": {
+      "*": ["*", "src/*"]
+    },
+    "allowSyntheticDefaultImports": true,
+    "downlevelIteration": true,
+    "noUnusedLocals": false,
+    "strictPropertyInitialization": false,
+    "skipLibCheck": true,
+    "keyofStringsOnly": true,
+    "lib": ["dom", "es5", "es6"]
+  },
+  "include": [
+    // "stories", // yarn build 或者 dev 时 build config会失败
+    "web-steps.ts",
+    "inject-context",
+    "config",
+    "cdn",
+    "src",
+    "src/**/*.vue",
+    "server",
+    "scripts",
+    "@types",
+    "tests"
+  ],
+  "exclude": ["node_modules", "*node_modules*", "dist", "docs", ".tmp", "build"]
+}
