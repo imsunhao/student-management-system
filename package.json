@@ -8,6 +8,7 @@
     "build": "yarn web-steps build",
     "start": "yarn web-steps start",
     "changelog": "conventional-changelog -p angular -i CHANGELOG.md -s",
+    "release": "yarn web-steps release production --skip-tests --skip-git --skip-changelog",
     "test": "yarn test"
   },
   "repository": {

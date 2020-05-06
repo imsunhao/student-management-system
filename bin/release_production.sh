@@ -23,6 +23,8 @@ rsync -r ./Dockerfile-project $workspace/
 rsync -r ./.dockerignore $workspace/
 rsync -r ./production.manifest.json $workspace/
 rsync -r ./bin $workspace/
+rsync -r ./docker-bin $workspace/
+rsync -r ./yarn.lock $workspace/
 rsync -r ./mongodb/initdb.d $workspace/mongodb/
 rsync -r ./mongodb/mongo.env $workspace/mongodb/
 rsync -r ./mongodb/mongod.conf $workspace/mongodb/
