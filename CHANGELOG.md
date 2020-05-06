@@ -1,3 +1,12 @@
+# [0.1.0-alpha.1](https://github.com/imsunhao/student-management-system/compare/v0.1.0-alpha.0...v0.1.0-alpha.1) (2020-05-06)
+
+
+### Features
+
+* 调整 脚本 ([b1645e7](https://github.com/imsunhao/student-management-system/commit/b1645e73fb7d9c37f76196bf8b39aa59f878e3fb))
+
+
+
 # 0.1.0-alpha.0 (2020-05-06)
 
 
