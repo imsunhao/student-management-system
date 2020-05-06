@@ -21,6 +21,7 @@ rsync -r ./docker-compose.yml $workspace/
 rsync -r ./Dockerfile-mongo $workspace/
 rsync -r ./Dockerfile-project $workspace/
 rsync -r ./.dockerignore $workspace/
+rsync -r ./package.json $workspace/
 rsync -r ./production.manifest.json $workspace/
 rsync -r ./bin $workspace/
 rsync -r ./docker-bin $workspace/

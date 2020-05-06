@@ -1,3 +1,7 @@
+# [0.1.0-alpha.2](https://github.com/imsunhao/student-management-system/compare/v0.1.0-alpha.1...v0.1.0-alpha.2) (2020-05-06)
+
+
+
 # [0.1.0-alpha.1](https://github.com/imsunhao/student-management-system/compare/v0.1.0-alpha.0...v0.1.0-alpha.1) (2020-05-06)
 
 
