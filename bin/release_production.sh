@@ -1,10 +1,33 @@
 #!/bin/bash
 # 此脚本会被 web-steps release 调用
 
+tag=$1
+workdir='/workspace/student-management-system'
+workspace="root@aliyun:$workdir"
+
+yarn changelog
+
 git add *
 
-# git commit
+git commit -m "release:$tag"
 
-# restart_script_path='/workspace/student-management-system/scripts/restart.sh'
+git tag $tag
 
-# ssh root@aliyun -t "$restart_script_path $1 $2"
+git push origin master
+git push origin refs/tags/$tag
+
+echo "同步配置文件"
+rsync -r ./docker-compose.yml $workspace/
+rsync -r ./Dockerfile-mongo $workspace/
+rsync -r ./Dockerfile-project $workspace/
+rsync -r ./.dockerignore $workspace/
+rsync -r ./production.manifest.json $workspace/
+rsync -r ./bin $workspace/
+rsync -r ./mongodb/initdb.d $workspace/mongodb/
+rsync -r ./mongodb/mongo.env $workspace/mongodb/
+rsync -r ./mongodb/mongod.conf $workspace/mongodb/
+
+echo "运行远程重启服务脚本"
+restart_script_path="$workdir/bin/restart.sh"
+
+ssh root@aliyun -t "$restart_script_path"

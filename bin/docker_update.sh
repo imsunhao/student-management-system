@@ -2,7 +2,7 @@
 echo '---------- docker container update -------------'
 
 echo '-----------------------'
-container='student-management-system_mongo_1'
+container='imsunhao/mongo'
 echo "update $container"
 
 docker cp ./mongodb/mongod.conf /etc/
@@ -12,7 +12,7 @@ docker container restart $container
 echo "success"
 
 echo '-----------------------'
-container='student-management-system_web-steps_1'
+container='imsunhao/student-management-system'
 echo "update $container"
 workdir='/student-management-system'
 
