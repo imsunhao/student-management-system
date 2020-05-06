@@ -2,20 +2,17 @@ import { GetUserServerConfig } from '@web-steps/config'
 import express from 'express'
 import { T_INJECT_CONTEXT } from '../inject-context/type'
 import { TServerContext } from '@web-steps/server'
+import { getENV, requrieENVConfig } from './utils/env'
+import { mongooseInit } from './mongo'
 
-function getServerEnv(env: string) {
-  return process.env[env]
-}
+const getServerConfig: GetUserServerConfig = ({ resolve }) => {
+  const NODE_ENV = getENV('NODE_ENV')
+  requrieENVConfig(resolve('mongodb/mongo.env'))
 
-const NODE_ENV = getServerEnv('NODE_ENV')
-
-const getServerConfig: GetUserServerConfig = () => {
   return {
     renderContext(context: TServerContext<T_INJECT_CONTEXT>) {
-      const c: any = context
-      console.log(NODE_ENV)
-      c.STATIC_HOST = NODE_ENV === 'production' ? context.injectContext.STATIC_HOST : ''
-      // console.log(context)
+      const result: any = context
+      result.STATIC_HOST = NODE_ENV === 'production' ? context.injectContext.STATIC_HOST : ''
     },
     beforeRender(req, res, next) {
       console.log('[beforeRender]', req.method, req.url)
@@ -28,6 +25,7 @@ const getServerConfig: GetUserServerConfig = () => {
       }
     },
     router(APP) {
+      mongooseInit()
       const router = express.Router()
 
       APP.use('/private', router)

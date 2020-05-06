@@ -44,8 +44,8 @@ const getConfig: GetUserConfig<T_INJECT_CONTEXT> = function({ resolve }) {
       target: {
         production: {
           host: 'https://student.imsunhao.com',
-          bin({ gitHash, tag }) {
-            console.log(`\n\n请提交上线申请!\n\tgit: ${gitHash}\n\ttag: ${tag}\n\n`)
+          bin({ tag }) {
+            return `bin/release_production.sh ${tag}`
           },
         },
       },

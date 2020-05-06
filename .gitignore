@@ -2,3 +2,4 @@ node_modules
 cdn
 dist
 production.manifest.json
+mongodb/data
