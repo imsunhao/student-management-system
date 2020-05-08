@@ -1,5 +1,6 @@
 <template>
   <div>
+    <p id="context">测试更新代码</p>
     <p id="context">INJECT_CONTEXT: {{ INJECT_CONTEXT }}</p>
   </div>
 </template>
