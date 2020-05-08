@@ -1,3 +1,13 @@
+# [0.1.0-alpha.3](https://github.com/imsunhao/student-management-system/compare/v0.1.0-alpha.2...v0.1.0-alpha.3) (2020-05-08)
+
+
+### Features
+
+* 优化 docker-porject image大小 ([df7081e](https://github.com/imsunhao/student-management-system/commit/df7081e49c2bce2afa68c4fa28a250b2dc4da743))
+* 移动 dockerfile ([4ea7cb2](https://github.com/imsunhao/student-management-system/commit/4ea7cb2a3bc795d17cdde389275e21ac24547b01))
+
+
+
 # [0.1.0-alpha.2](https://github.com/imsunhao/student-management-system/compare/v0.1.0-alpha.1...v0.1.0-alpha.2) (2020-05-06)
 
 
