@@ -5,8 +5,10 @@ echo '-----------------------'
 container='student-management-system_mongo_1'
 echo "update $container"
 
-docker cp ./mongodb/mongod.conf /etc/
-docker cp ./mongodb/initdb.d/ /docker-entrypoint-initdb.d/
+workspace="$container:"
+
+docker cp ./mongodb/mongod.conf $workspace/etc/
+docker cp ./mongodb/initdb.d/ $workspace/docker-entrypoint-initdb.d/
 
 docker container restart $container
 echo "success"
