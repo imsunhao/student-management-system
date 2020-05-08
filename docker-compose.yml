@@ -17,7 +17,7 @@ services:
     hostname: mongo
     build:
       context: .
-      dockerfile: Dockerfile-mongo
+      dockerfile: mongodb/Dockerfile-mongo
     env_file:
       - ./mongodb/mongo.env
     volumes:

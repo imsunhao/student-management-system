@@ -18,7 +18,6 @@ git push origin refs/tags/$tag
 
 echo "同步配置文件"
 rsync -r ./docker-compose.yml $workspace/
-rsync -r ./Dockerfile-mongo $workspace/
 rsync -r ./Dockerfile-project $workspace/
 rsync -r ./.dockerignore $workspace/
 rsync -r ./package.json $workspace/
@@ -29,6 +28,7 @@ rsync -r ./yarn.lock $workspace/
 rsync -r ./mongodb/initdb.d $workspace/mongodb/
 rsync -r ./mongodb/mongo.env $workspace/mongodb/
 rsync -r ./mongodb/mongod.conf $workspace/mongodb/
+rsync -r ./mongodb/Dockerfile-mongo $workspace/mongodb/
 
 echo "运行远程重启服务脚本"
 restart_script_path="$workdir/bin/restart.sh"
