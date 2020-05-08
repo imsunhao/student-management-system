@@ -25,6 +25,5 @@ docker cp ./package*.json $workspace/
 docker cp ./yarn.lock $workspace/
 docker cp ./mongodb/mongo.env $workspace/mongodb/
 
-docker exec -t $container /bin/sh $workdir/docker-bin/yarn_install.sh
 docker container restart $container
 echo "success"

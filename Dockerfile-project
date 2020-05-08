@@ -6,15 +6,13 @@ RUN mkdir -p $workspace
 
 WORKDIR $workspace
 
-COPY ./docker-bin $workspace/
+COPY ./docker-bin/ $workspace/docker-bin/
 COPY ./dist $workspace/dist
 COPY ./src/index.template.html $workspace/src/
 COPY ./package*.json $workspace/
 COPY ./yarn.lock $workspace/
 COPY ./mongodb/mongo.env $workspace/mongodb/
 
-RUN yarn install --prod --registry=https://registry.npm.taobao.org
-
 EXPOSE 8060
 
-CMD ["node", "node_modules/@web-steps/cli/bin/web-steps", "start"]
+CMD ["/bin/bash", "/student-management-system/docker-bin/start.sh"]
