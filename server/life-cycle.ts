@@ -1,22 +1,46 @@
 import { GetUserServerConfig } from '@web-steps/config'
-import express from 'express'
 import { T_INJECT_CONTEXT } from '../inject-context/type'
-import { TServerContext } from '@web-steps/server'
-import { getENV, requrieENVConfig } from './utils/env'
+import { TServerContext, TAPP } from '@web-steps/server'
+import { isProduction, requrieENVConfig } from './env'
 import { mongooseInit } from './mongo'
+import { createRouter } from 'server/router'
+import bodyParser from 'body-parser'
+import session from 'express-session'
+
+const INIT_LIFE_CYCLE = process.env.INIT_LIFE_CYCLE
+if (!INIT_LIFE_CYCLE) process.env.INIT_LIFE_CYCLE = 'TRUE'
+
+function sessionInit(APP: TAPP) {
+  const sess: any = {
+    secret: 'keyboard cat',
+    cookie: {},
+  }
+
+  if (isProduction) {
+    APP.express.set('trust proxy', 1) // trust first proxy
+    sess.cookie.secure = true // serve secure cookies
+  }
+
+  APP.use(session(sess))
+}
 
 const getServerConfig: GetUserServerConfig = ({ resolve }) => {
-  const NODE_ENV = getENV('NODE_ENV')
   requrieENVConfig(resolve('mongodb/mongo.env'))
 
   return {
+    beforeCreated(APP) {
+      if (!INIT_LIFE_CYCLE) {
+        mongooseInit()
+      }
+      sessionInit(APP)
+    },
     renderContext(context: TServerContext<T_INJECT_CONTEXT>) {
       const result: any = context
-      result.STATIC_HOST = NODE_ENV === 'production' ? context.injectContext.STATIC_HOST : ''
+      result.STATIC_HOST = isProduction ? context.injectContext.STATIC_HOST : ''
     },
     beforeRender(req, res, next) {
       console.log('[beforeRender]', req.method, req.url)
-      if (req.url.startsWith('/private')) {
+      if (req.url.startsWith('/api')) {
         next()
       }
       if (req.url.startsWith('/web-steps')) {
@@ -25,11 +49,12 @@ const getServerConfig: GetUserServerConfig = ({ resolve }) => {
       }
     },
     router(APP) {
-      mongooseInit()
-      const router = express.Router()
+      APP.use(bodyParser.json())
+      APP.use(bodyParser.urlencoded({ extended: false }))
 
-      APP.use('/private', router)
+      APP.use('/api', createRouter())
     },
   }
 }
+
 export default getServerConfig

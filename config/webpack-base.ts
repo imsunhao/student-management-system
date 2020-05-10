@@ -1,7 +1,7 @@
 import { TGetWebpackConfig } from '@web-steps/config'
 import { STATIC_HOST } from './settings'
 
-const getConfig: TGetWebpackConfig = function ({ args: { env }, resolve }) {
+const getConfig: TGetWebpackConfig = function({ args: { env }, resolve }) {
   const isProduction = env === 'production'
   const publicPath = isProduction ? STATIC_HOST + '/dist/web-steps/' : '/web-steps/'
 
@@ -12,6 +12,8 @@ const getConfig: TGetWebpackConfig = function ({ args: { env }, resolve }) {
     resolve: {
       alias: {
         src: resolve('src'),
+        mongodb: resolve('mongodb'),
+        server: resolve('server'),
       },
     },
     module: {

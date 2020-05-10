@@ -1,6 +1,8 @@
 import mongoose from 'mongoose'
 import { HOST, PORT, DATABASE } from './setting'
-import { getENV } from '../utils/env'
+// import { getENV, isProduction } from 'server/env'
+import { getENV } from 'server/env'
+import { initMongoData, dropMongoData } from 'server/mongo/scripts'
 
 const MAX_RETRY_TIME = 10
 
@@ -29,6 +31,7 @@ export function mongooseInit() {
     return mongoose.connect(
       uri,
       {
+        // autoIndex: !isProduction,
         authSource: MONGO_INITDB_DATABASE,
         auth: {
           user: MONGO_INITDB_USERNAME,
@@ -46,8 +49,17 @@ export function mongooseInit() {
 
   connectWithRetry()
 
-  db.once('open', function() {
+  db.once('open', async function() {
     console.log('[MongoDB] 连接成功', uri)
     db.on('error', console.error.bind(console, '[MongoDB] 错误：'))
+
+    try {
+      await dropMongoData()
+      await initMongoData()
+      console.log('[MongoDB] 初始化 成功')
+    } catch (error) {
+      console.log('[MongoDB] 初始化 失败', uri)
+      return
+    }
   })
 }

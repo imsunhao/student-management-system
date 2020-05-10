@@ -1,6 +1,7 @@
 import { T_INJECT_CONTEXT } from '../inject-context/type'
 import { Store } from 'vuex'
 import { VUEX_DEVTOOL } from '@web-steps/helper'
+import Requester from 'src/api/base-actor/request'
 
 interface HostGlobal extends Window {
   /**
@@ -8,6 +9,7 @@ interface HostGlobal extends Window {
    * - 来着 服务端
    */
   __INITIAL_STATE__: any
+
   /**
    * 注入 环境 信息
    */
@@ -29,6 +31,13 @@ interface HostGlobal extends Window {
    * - server端 与 production环境下 一定关闭
    */
   VUEX_DEVTOOL: VUEX_DEVTOOL
+
+  /**
+   * 在 axios 的基础上添加简单的一些参数
+   * - 提供对 cookies 的序列化
+   * - 只存在 client端
+   */
+  Requester: Requester
 }
 
 let hostGlobal: HostGlobal

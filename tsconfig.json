@@ -23,12 +23,12 @@
     "lib": ["dom", "es5", "es6"]
   },
   "include": [
-    // "stories", // yarn build 或者 dev 时 build config会失败
     "web-steps.ts",
     "inject-context",
     "config",
     "cdn",
     "src",
+    "mongodb",
     "src/**/*.vue",
     "server",
     "scripts",
