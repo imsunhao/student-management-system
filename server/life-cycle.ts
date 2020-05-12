@@ -6,12 +6,13 @@ import { mongooseInit } from './mongo'
 import { createRouter } from 'server/router'
 import bodyParser from 'body-parser'
 import session from 'express-session'
+import Tests from 'tests'
 
 const INIT_LIFE_CYCLE = process.env.INIT_LIFE_CYCLE
 if (!INIT_LIFE_CYCLE) process.env.INIT_LIFE_CYCLE = 'TRUE'
 
 function sessionInit(APP: TAPP) {
-  const sess: any = {
+  const sess: session.SessionOptions = {
     secret: 'keyboard cat',
     cookie: {},
   }
@@ -31,6 +32,13 @@ const getServerConfig: GetUserServerConfig = ({ resolve }) => {
     beforeCreated(APP) {
       if (!INIT_LIFE_CYCLE) {
         mongooseInit()
+        if (process.env.TEST_ENV && process.send) {
+          process.send({ messageKey: 'test-start' })
+          process.on('message', (message: Tests.Node.ProcessMessage) => {
+            const { messageKey } = message
+            if (messageKey === 'exit') process.exit(0)
+          })
+        }
       }
       sessionInit(APP)
     },

@@ -4,11 +4,10 @@
     "resolveJsonModule": true,
     "module": "esnext",
     "moduleResolution": "node",
-    "target": "es6",
+    "target": "esnext",
     "importHelpers": true,
     "strict": false,
     "sourceMap": true,
-    "allowJs": true,
     "experimentalDecorators": true,
     "baseUrl": "./",
     "paths": {
@@ -20,7 +19,12 @@
     "strictPropertyInitialization": false,
     "skipLibCheck": true,
     "keyofStringsOnly": true,
-    "lib": ["dom", "es5", "es6"]
+    "lib": ["esnext", "dom"],
+    "jsx": "preserve",
+    "resolveJsonModule": true,
+    "esModuleInterop": true,
+    "removeComments": false,
+    "strictNullChecks": false
   },
   "include": [
     "web-steps.ts",
@@ -30,6 +34,7 @@
     "src",
     "mongodb",
     "src/**/*.vue",
+    "__tests__",
     "server",
     "scripts",
     "@types",

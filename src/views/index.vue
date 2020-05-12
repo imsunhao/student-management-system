@@ -1,13 +1,10 @@
 <template>
   <div>
-    <p id="context">测试更新代码</p>
-    <p id="context">INJECT_CONTEXT: {{ INJECT_CONTEXT }}</p>
+    <h1 id="title">学生管理系统</h1>
   </div>
 </template>
 
 <script>
-import { hostGlobal } from '../envs'
-
 export default {
   pageInfo() {
     return {
@@ -17,15 +14,7 @@ export default {
     }
   },
   data() {
-    return {
-      INJECT_CONTEXT: hostGlobal.__INJECT_CONTEXT__,
-    }
+    return {}
   },
 }
 </script>
-
-<style lang="scss">
-#context {
-  color: red;
-}
-</style>
