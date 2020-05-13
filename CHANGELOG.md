@@ -1,3 +1,17 @@
+# [0.1.0-alpha.4](https://github.com/imsunhao/student-management-system/compare/v0.1.0-alpha.3...v0.1.0-alpha.4) (2020-05-13)
+
+
+### Features
+
+* upgrade [web-steps] 0.1.5 ([cfe032c](https://github.com/imsunhao/student-management-system/commit/cfe032c04152c329b040266de7fe7db5efa38788))
+* 完善 登录 模块, 初步建立 前后端 请求模块 ([8727294](https://github.com/imsunhao/student-management-system/commit/87272940546d2087d2232eb2d70299c69e719d1f))
+* 添加 e2e测试 基础 ([0aca50a](https://github.com/imsunhao/student-management-system/commit/0aca50a431250793eb8cba4cea8bf3abc31a1b7e))
+* 添加 element-ui ([e376554](https://github.com/imsunhao/student-management-system/commit/e376554bf3ac0057e24db92b5e17570a837d56d4))
+* 添加 mongodb 数据库 基础 (开发, 结构, 请求) ([b8e3b68](https://github.com/imsunhao/student-management-system/commit/b8e3b68c01ab190d6275188ff879fcf314b5660d))
+* 调整 docker_update 脚本 ([c034669](https://github.com/imsunhao/student-management-system/commit/c03466947cde4ede830bae9c30e8b46e56430233))
+
+
+
 # [0.1.0-alpha.3](https://github.com/imsunhao/student-management-system/compare/v0.1.0-alpha.2...v0.1.0-alpha.3) (2020-05-08)
 
 
