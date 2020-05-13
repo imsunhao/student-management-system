@@ -1,18 +1,15 @@
 import { globalHelper } from './helpers'
-import { Tstore } from './type'
+import { TStore } from 'store'
+
+import { userMutations } from './local-modules/user/mutations'
 
 export const mutations = globalHelper.makeMutations({
-  SET_USER: (state, user?: Tstore.state['user']) => {
-    state.user = user
-  },
-  ADD_NUMBER: (state, number: number) => {
-    state.count += number
-  },
+  ...userMutations,
 })
 
 export default mutations
 
 export type TMutations = typeof mutations
 
-export const commit = globalHelper.createCommit<Tstore.Mutations>()
+export const commit = globalHelper.createCommit<TStore.Mutations>()
 export const getState = globalHelper.createGetState()

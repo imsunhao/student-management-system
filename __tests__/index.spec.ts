@@ -14,7 +14,7 @@ describe('e2e Tests', () => {
 
       childProcess = Execa.runNodeIPC(nodeArgv, { isSilence: !isShow, isRead })
 
-      childProcess.on('message', (message: Tests.Node.ProcessMessage) => {
+      childProcess.on('message', (message: Tests.NodeJS.ProcessMessage) => {
         const { messageKey } = message
         if (messageKey === 'test-start') done()
       })

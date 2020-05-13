@@ -31,10 +31,12 @@ const getServerConfig: GetUserServerConfig = ({ resolve }) => {
   return {
     beforeCreated(APP) {
       if (!INIT_LIFE_CYCLE) {
+        APP.use(bodyParser.json())
+        APP.use(bodyParser.urlencoded({ extended: false }))
         mongooseInit()
         if (process.env.TEST_ENV && process.send) {
           process.send({ messageKey: 'test-start' })
-          process.on('message', (message: Tests.Node.ProcessMessage) => {
+          process.on('message', (message: Tests.NodeJS.ProcessMessage) => {
             const { messageKey } = message
             if (messageKey === 'exit') process.exit(0)
           })
@@ -47,7 +49,9 @@ const getServerConfig: GetUserServerConfig = ({ resolve }) => {
       result.STATIC_HOST = isProduction ? context.injectContext.STATIC_HOST : ''
     },
     beforeRender(req, res, next) {
-      console.log('[beforeRender]', req.method, req.url)
+      let userInfo = ''
+      if (req.session.user) userInfo = `ID=${req.session.user.ID} name=${req.session.user.name}`
+      console.log('[beforeRender]', req.method, req.url, userInfo)
       if (req.url.startsWith('/api')) {
         next()
       }
@@ -55,12 +59,18 @@ const getServerConfig: GetUserServerConfig = ({ resolve }) => {
         res.end(404)
         next()
       }
+      if (!process.__WEB_STEPS__) process.__WEB_STEPS__ = {}
+      process.__WEB_STEPS__.req = req
+    },
+    renderSend(html, req, res) {
+      delete process.__WEB_STEPS__.req
+      res.end(html)
     },
     router(APP) {
-      APP.use(bodyParser.json())
-      APP.use(bodyParser.urlencoded({ extended: false }))
+      console.log('[添加 bodyParser 中间件]')
 
       APP.use('/api', createRouter())
+      console.log('[添加 api 路由]')
     },
   }
 }

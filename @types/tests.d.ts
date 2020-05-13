@@ -3,7 +3,7 @@
  */
 declare module 'tests' {
   declare namespace Tests {
-    namespace Node {
+    namespace NodeJS {
       /**
        * 进程通讯类型
        */

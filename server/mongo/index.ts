@@ -26,7 +26,7 @@ export function mongooseInit() {
   const connectWithRetry = function() {
     if (retryTime >= MAX_RETRY_TIME) {
       console.error('[MongoDB]', uri, '连接超时')
-      return
+      process.exit(0)
     }
     return mongoose.connect(
       uri,

@@ -1,4 +1,4 @@
-import { Tstore } from './type'
+import { TStore } from 'store'
 
 import Vue from 'vue'
 import Vuex, { Store } from 'vuex'
@@ -6,23 +6,17 @@ import Vuex, { Store } from 'vuex'
 import actions, { dispatch, TActions } from './actions'
 import mutations, { commit, getState, TMutations } from './mutations'
 import getters, { getGetter } from './getters'
+import { getUserState } from './local-modules/user/state'
 
-function state(): Tstore.state {
+function state(): TStore.State {
   return {
-    count: 0,
-    api: {
-      get: false,
-      post: false,
-    },
-    user: {
-      test: '1111111',
-    },
+    ...getUserState(),
   }
 }
 
 Vue.use(Vuex)
 
-let store: Store<Tstore.state>
+let store: Store<TStore.State>
 
 /// <RemoveCodeBlock=server-production>
 import { WebpackHelper } from '@web-steps/helper'
@@ -45,7 +39,7 @@ if (module.hot) {
 /// </RemoveCodeBlock=server-production>
 
 export function createStore() {
-  store = new Vuex.Store<Tstore.state>({
+  store = new Vuex.Store<TStore.State>({
     state: state(),
     actions,
     mutations,

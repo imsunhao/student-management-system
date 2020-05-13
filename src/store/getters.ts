@@ -1,10 +1,8 @@
 import { globalHelper } from './helpers'
+import { userGetters } from './local-modules/user/getters'
 
 export const getters = globalHelper.makeGetters({
-  hasUser(state) {
-    // console.log('hasUser', state, state.user)
-    return !!state.user
-  }
+  ...userGetters,
 })
 
 export default getters

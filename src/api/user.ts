@@ -9,7 +9,7 @@ class UserApiActor extends ApiActor<TUser> {
    */
   login(data: User.login, { cookies }: SSRPayload = {}) {
     return this.post({
-      uri: 'login',
+      action: 'login',
       cookies,
       data,
     })
@@ -18,9 +18,10 @@ class UserApiActor extends ApiActor<TUser> {
   /**
    * 用户退出
    */
-  logout() {
-    return this.get({
-      uri: 'logout',
+  logout({ cookies }: SSRPayload = {}) {
+    return this.post({
+      action: 'logout',
+      cookies,
     })
   }
 
@@ -29,7 +30,7 @@ class UserApiActor extends ApiActor<TUser> {
    */
   register() {
     return this.get({
-      uri: 'register',
+      action: 'register',
     })
   }
 }
