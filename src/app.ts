@@ -9,6 +9,9 @@ if (isServer) {
   Vue.mixin(ServerVuePageInfoMixin)
 }
 
+import ElementUI from 'element-ui'
+Vue.use(ElementUI)
+
 /**
  * 生成 vm app
  */
@@ -19,7 +22,7 @@ export function createApp() {
   const app = new Vue({
     store,
     router,
-    render: h => h(App)
+    render: h => h(App),
   })
 
   return { app, router, store }

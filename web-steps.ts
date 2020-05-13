@@ -15,7 +15,7 @@ const getConfig: GetUserConfig<T_INJECT_CONTEXT> = function({ resolve }) {
         client: { webpack: getClientConfig },
         server: {
           webpack: getServerConfig,
-          exclude: [],
+          exclude: ['element-ui'],
           statics: {
             '/web-steps': {
               path: resolve('./dist/web-steps'),
@@ -37,6 +37,7 @@ const getConfig: GetUserConfig<T_INJECT_CONTEXT> = function({ resolve }) {
         Vuex: { name: 'vuex', refs: ['Vue'] },
         VueRouter: { name: 'vue-router', refs: ['Vue'] },
         Axios: 'axios',
+        ElementUI: { name: 'element-ui', refs: ['Vue'] },
       },
     },
     release: {
