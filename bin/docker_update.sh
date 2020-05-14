@@ -8,7 +8,7 @@ echo "update $container"
 workspace="$container:"
 
 docker cp ./mongodb/mongod.conf $workspace/etc/
-docker cp ./mongodb/initdb.d/ $workspace/docker-entrypoint-initdb.d/
+docker cp ./mongodb/initdb.d/* $workspace/docker-entrypoint-initdb.d/
 
 docker container restart $container
 echo "success"

@@ -15,12 +15,13 @@ function sessionInit(APP: TAPP) {
   const sess: session.SessionOptions = {
     secret: 'keyboard cat',
     cookie: {},
+    saveUninitialized: false,
   }
 
-  if (isProduction) {
-    APP.express.set('trust proxy', 1) // trust first proxy
-    sess.cookie.secure = true // serve secure cookies
-  }
+  // if (isProduction) {
+  //   APP.express.set('trust proxy', 1) // trust first proxy
+  //   sess.cookie.secure = true // serve secure cookies
+  // }
 
   APP.use(session(sess))
 }

@@ -37,6 +37,8 @@ export function mongooseInit() {
           user: MONGO_INITDB_USERNAME,
           password: MONGO_INITDB_PASSWORD,
         },
+        useUnifiedTopology: true,
+        useNewUrlParser: true,
       },
       function(err) {
         if (err) {
@@ -58,7 +60,7 @@ export function mongooseInit() {
       await initMongoData()
       console.log('[MongoDB] 初始化 成功')
     } catch (error) {
-      console.log('[MongoDB] 初始化 失败', uri)
+      console.log('[MongoDB] 初始化 失败', uri, error)
       return
     }
   })
