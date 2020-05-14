@@ -1,3 +1,12 @@
+# [0.1.0-alpha.5](https://github.com/imsunhao/student-management-system/compare/v0.1.0-alpha.4...v0.1.0-alpha.5) (2020-05-14)
+
+
+### Features
+
+* 优化 线上服务 配置 ([19385f1](https://github.com/imsunhao/student-management-system/commit/19385f17f66e5e16e366668e58b67f10d3cda0c1))
+
+
+
 # [0.1.0-alpha.4](https://github.com/imsunhao/student-management-system/compare/v0.1.0-alpha.3...v0.1.0-alpha.4) (2020-05-13)
 
 
