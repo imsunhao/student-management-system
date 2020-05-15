@@ -1,3 +1,18 @@
+# [0.1.0-alpha.6](https://github.com/imsunhao/student-management-system/compare/v0.1.0-alpha.5...v0.1.0-alpha.6) (2020-05-15)
+
+
+### Bug Fixes
+
+* 修复 热加载 bodyParser 失效问题 ([1e6f1a0](https://github.com/imsunhao/student-management-system/commit/1e6f1a0b531dd4e54bc41b8d6c8b8f9274764f4a))
+
+
+### Features
+
+* 只有指定初始化数据库或者测试环境才会初始化数据库 ([e8e6c2b](https://github.com/imsunhao/student-management-system/commit/e8e6c2b92a9de6ccf4aa0fa5e1691f5a5a8c315b))
+* 服务器 使用 npm 代替 yarn 进行 prod 安装 ([2c81e97](https://github.com/imsunhao/student-management-system/commit/2c81e9741b0378c34ca1b3fbc90f9a3a8b375067))
+
+
+
 # [0.1.0-alpha.5](https://github.com/imsunhao/student-management-system/compare/v0.1.0-alpha.4...v0.1.0-alpha.5) (2020-05-14)
 
 
