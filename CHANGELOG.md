@@ -1,3 +1,31 @@
+# [0.1.0](https://github.com/imsunhao/student-management-system/compare/v0.1.0-alpha.6...v0.1.0) (2020-05-15)
+
+
+### Bug Fixes
+
+* 修复 更新服务器脚本 ([ab57daf](https://github.com/imsunhao/student-management-system/commit/ab57dafa8da05d570966391e05ce326a5989a59f))
+
+
+### Features
+
+* 完善 release脚本 ([8345707](https://github.com/imsunhao/student-management-system/commit/83457074289bae45c716376b19f41851b30c1c06))
+
+
+
+# [0.1.0](https://github.com/imsunhao/student-management-system/compare/v0.1.0-alpha.6...v0.1.0) (2020-05-15)
+
+
+### Bug Fixes
+
+* 修复 更新服务器脚本 ([ab57daf](https://github.com/imsunhao/student-management-system/commit/ab57dafa8da05d570966391e05ce326a5989a59f))
+
+
+### Features
+
+* 完善 release脚本 ([8345707](https://github.com/imsunhao/student-management-system/commit/83457074289bae45c716376b19f41851b30c1c06))
+
+
+
 # [0.1.0-alpha.6](https://github.com/imsunhao/student-management-system/compare/v0.1.0-alpha.5...v0.1.0-alpha.6) (2020-05-15)
 
 
