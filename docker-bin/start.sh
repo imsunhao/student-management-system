@@ -4,7 +4,7 @@ workdir='/student-management-system'
 
 cd $workdir
 
-yarn install --prod --registry=https://registry.npm.taobao.org
+npm install --prod --registry=https://registry.npm.taobao.org
 
 rgs=("$@")
 cmd=$(echo ${rgs[@]})

@@ -24,7 +24,6 @@ docker cp ./docker-bin/ $workspace/docker-bin/
 docker cp ./dist $workspace/
 docker cp ./src/index.template.html $workspace/src/
 docker cp ./package*.json $workspace/
-docker cp ./yarn.lock $workspace/
 docker cp ./mongodb/mongo.env $workspace/mongodb/
 
 docker container restart $container
