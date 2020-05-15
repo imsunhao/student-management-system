@@ -1,3 +1,31 @@
+## [0.1.1](https://github.com/imsunhao/student-management-system/compare/v0.1.0...v0.1.1) (2020-05-15)
+
+
+### Bug Fixes
+
+* mongo DeprecationWarning: ([33470ad](https://github.com/imsunhao/student-management-system/commit/33470ad622fec0c939ffbbae16f2543b2bcf53b3))
+
+
+### Features
+
+* 使用 mongodb 存储 session ([9815f5c](https://github.com/imsunhao/student-management-system/commit/9815f5c5fce97f430fdeaffbd84d89abaa1bae72))
+
+
+
+## [0.1.1](https://github.com/imsunhao/student-management-system/compare/v0.1.0...v0.1.1) (2020-05-15)
+
+
+### Bug Fixes
+
+* mongo DeprecationWarning: ([33470ad](https://github.com/imsunhao/student-management-system/commit/33470ad622fec0c939ffbbae16f2543b2bcf53b3))
+
+
+### Features
+
+* 使用 mongodb 存储 session ([9815f5c](https://github.com/imsunhao/student-management-system/commit/9815f5c5fce97f430fdeaffbd84d89abaa1bae72))
+
+
+
 # [0.1.0](https://github.com/imsunhao/student-management-system/compare/v0.1.0-alpha.6...v0.1.0) (2020-05-15)
 
 
