@@ -12,6 +12,8 @@ export function mongooseInit() {
   if (init) return
   init = true
 
+  mongoose.set('useCreateIndex', true)
+
   const MONGO_INITDB_DATABASE = getENV('MONGO_INITDB_DATABASE')
   const MONGO_INITDB_USERNAME = getENV('MONGO_INITDB_USERNAME')
   const MONGO_INITDB_PASSWORD = getENV('MONGO_INITDB_PASSWORD')
