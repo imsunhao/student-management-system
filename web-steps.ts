@@ -15,7 +15,7 @@ const getConfig: GetUserConfig<T_INJECT_CONTEXT> = function({ resolve }) {
         client: { webpack: getClientConfig },
         server: {
           webpack: getServerConfig,
-          exclude: ['element-ui'],
+          exclude: [],
           statics: {
             '/web-steps': {
               path: resolve('./dist/web-steps'),

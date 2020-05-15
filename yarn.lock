@@ -808,23 +808,23 @@
   optionalDependencies:
     prettier "^1.18.2"
 
-"@web-steps/cli@^0.1.6":
-  version "0.1.6"
-  resolved "https://registry.yarnpkg.com/@web-steps/cli/-/cli-0.1.6.tgz#5d8d2a76a12311b007eda22a40f4e47a6aef3a09"
-  integrity sha512-xXJKUzCLS4qH1GRgFdIKXSzTsD5Jcsw1yxpPoKVI6AUAMj6MDCR+T+dnxbzNtEaD0xs7ev+xWL4zer44DmqszA==
+"@web-steps/cli@^0.1.7":
+  version "0.1.7"
+  resolved "https://registry.yarnpkg.com/@web-steps/cli/-/cli-0.1.7.tgz#9a81784b492692c73c7a4f3d6400da4ef0e372f5"
+  integrity sha512-WKDy2jwuGprSCySDFxBEKz+6CswnAjQFWd4EXaD6guD520SRW54P5edl1Su1ThnqNgS8B+nOG28jmlXq8gAAcg==
 
-"@web-steps/compiler@^0.1.6":
-  version "0.1.6"
-  resolved "https://registry.yarnpkg.com/@web-steps/compiler/-/compiler-0.1.6.tgz#8f11b51b9d883d0f7611129b42e8007ec0f3e96b"
-  integrity sha512-0cy/WL2kecE2/bLKHE4PyuuRKPa6edTAzR3Ls0vBL9DcnjuUOSYqKoUEipsKBlHnja+qPFN+28KPuzxJaqjnOQ==
+"@web-steps/compiler@^0.1.7":
+  version "0.1.7"
+  resolved "https://registry.yarnpkg.com/@web-steps/compiler/-/compiler-0.1.7.tgz#12c44aa52027054dff0f405a9e3d42c85e990d42"
+  integrity sha512-Dh2g7zaNd9Z7bLHcu8lqNkKbEec4IpFIvkujS3ROC4o4OlBa6Z+myUuDoqEG4ax12XiaCIUA+UkP9tdYjSUXuA==
   dependencies:
     memory-fs "^0.5.0"
     require-from-string "^2.0.2"
 
-"@web-steps/config@^0.1.6":
-  version "0.1.6"
-  resolved "https://registry.yarnpkg.com/@web-steps/config/-/config-0.1.6.tgz#4d82f4f7cb3532672b788d6c92d4ae04812f131b"
-  integrity sha512-okfBAr/zdJWA0te+hN45WYS7G9PmKGWTfgqNxGJgcXRgE/27Qh5I8eZ2KPCS33pWqBRVoHoev17SaSwsFPoPZw==
+"@web-steps/config@^0.1.7":
+  version "0.1.7"
+  resolved "https://registry.yarnpkg.com/@web-steps/config/-/config-0.1.7.tgz#529e0e10bbf8be8d23c62b2b6dde340ac06dbc6c"
+  integrity sha512-i4r3mCXaTa+B66W0WEZvaJDcEnGGwWhsTIyS3y/SQJF53ck37pDx/eDWJVPmtsEgmyA+3zGF62BPuv5FiAgptw==
   dependencies:
     "@types/express" "^4.17.2"
     "@types/terser-webpack-plugin" "^2.2.0"
@@ -848,34 +848,34 @@
     webpack-merge "^4.2.2"
     webpack-node-externals "^1.7.2"
 
-"@web-steps/helper@^0.1.6":
-  version "0.1.6"
-  resolved "https://registry.yarnpkg.com/@web-steps/helper/-/helper-0.1.6.tgz#a4a3decfbee033d10b467878c04edd01e21e3005"
-  integrity sha512-bQFnsosklozecLw0lJtq3gfmVGIX6TxcsazO6/diV1eiDLrSfdDu1PMJVMTKvjI41hON6lfYhJ+LIUDdURoQhw==
+"@web-steps/helper@^0.1.7":
+  version "0.1.7"
+  resolved "https://registry.yarnpkg.com/@web-steps/helper/-/helper-0.1.7.tgz#d6a9f0c296fa877ced02de72cfe0382eb369a85a"
+  integrity sha512-dMViFw3hrz7o0MqLGJ6F9CiUvc+LOjOpmsl7ajKD/3+yUmi9C8EvuzkrnliwCFSdREDntjozN1nZeKCV+M854A==
 
-"@web-steps/oss@0.1.6", "@web-steps/oss@^0.1.6":
-  version "0.1.6"
-  resolved "https://registry.yarnpkg.com/@web-steps/oss/-/oss-0.1.6.tgz#0e1d628b94eaff9b072738b037f1328e8e34bbfb"
-  integrity sha512-YL6ePhVRG7YaEFJWKBEWSqvjyovLMBnlQMMQT1HCLo95QIpPGblOUogmXkdxbf5JYrVBNLuRrAXH31fSS0DTPg==
+"@web-steps/oss@0.1.7", "@web-steps/oss@^0.1.7":
+  version "0.1.7"
+  resolved "https://registry.yarnpkg.com/@web-steps/oss/-/oss-0.1.7.tgz#499bd1b5dbd9a92fff21991b6fab050db5c82cb4"
+  integrity sha512-o1ZAUVvbRqijMd4Mk9WJmEeuK308ZmHPXV/WWyak5yYcycmE1in/vv9E1kDfm7Z7iVvfeRSOeXEw5j+AC2zR3Q==
   dependencies:
     ali-oss "^6.5.1"
     co "^4.6.0"
 
-"@web-steps/release@^0.1.6":
-  version "0.1.6"
-  resolved "https://registry.yarnpkg.com/@web-steps/release/-/release-0.1.6.tgz#77a6b1703ea691c35006e622d221f5574153a42f"
-  integrity sha512-v5SrCKWecK8WeRXJAdp19GJxX/InQqMoAIkclQsn6E9cHtnQ4f0+DTjhp9rKEwfUO0X2ngffZz/miva8kTPtWg==
+"@web-steps/release@^0.1.7":
+  version "0.1.7"
+  resolved "https://registry.yarnpkg.com/@web-steps/release/-/release-0.1.7.tgz#86e252b344dd3cbfc8818b90dee4b36141ef3926"
+  integrity sha512-R+1p1UmdV3l40bnqoShy38gVwfx238TCf5xnib0yVxdQLnNBSM1hFTUI73GRd1Gs9ab6BBSQNaQF71gBEHe8gQ==
   dependencies:
-    "@web-steps/oss" "0.1.6"
+    "@web-steps/oss" "0.1.7"
     conventional-changelog-cli "^2.0.31"
     enquirer "^2.3.4"
     execa "^4.0.0"
     semver "^7.1.3"
 
-"@web-steps/server@^0.1.6":
-  version "0.1.6"
-  resolved "https://registry.yarnpkg.com/@web-steps/server/-/server-0.1.6.tgz#d7c768fb666aef7a6155beaae74a48d7ce6d3e0e"
-  integrity sha512-eNcnLVe8RSaVwWH5AzyULHqejSHbJRJaoxaVf8Rh+LnOhYnIpKuJsfrUoYisLMWIJ5aaD4IXb+/Q7xrtIZxdUg==
+"@web-steps/server@^0.1.7":
+  version "0.1.7"
+  resolved "https://registry.yarnpkg.com/@web-steps/server/-/server-0.1.7.tgz#491a359ba2a586d4246c65b46244b281bd1c0f9f"
+  integrity sha512-4iQpOBXe9bb3Ss6e8Z7IQ/jkJgE6EEPPaMYkrJj4XmWESriTw4JDdXUAOwhDECV6TmJEwpaHsY/HtqHj+j2bYA==
   dependencies:
     base64url "^3.0.1"
     express "^4.17.1"

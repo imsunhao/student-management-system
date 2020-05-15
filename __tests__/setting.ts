@@ -6,6 +6,12 @@ export const args = minimist(process.argv.slice(3), { string: 'case', default: {
 
 export const { show: isShow, read: isRead, cache: useCache } = args
 
+function getRandomArbitrary(min, max) {
+  return Math.floor(Math.random() * (max - min) + min)
+}
+
+export const port = getRandomArbitrary(10000, 40000)
+
 export const url = {
-  home: 'http://127.0.0.1:8060/',
+  home: `http://127.0.0.1:${port}/`,
 }

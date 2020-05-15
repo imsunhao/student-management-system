@@ -4,12 +4,12 @@ import { createStore } from './store'
 import { createRouter } from './router'
 import { ServerVuePageInfoMixin } from 'src/utils/mixins/page-info'
 import { isServer } from 'src/envs'
+import ElementUI from 'element-ui'
 
 if (isServer) {
   Vue.mixin(ServerVuePageInfoMixin)
 }
 
-import ElementUI from 'element-ui'
 Vue.use(ElementUI)
 
 /**
