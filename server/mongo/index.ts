@@ -56,9 +56,11 @@ export function mongooseInit() {
     db.on('error', console.error.bind(console, '[MongoDB] 错误：'))
 
     try {
-      await dropMongoData()
-      await initMongoData()
-      console.log('[MongoDB] 初始化 成功')
+      if (process.env.TEST_ENV || process.env.INIT_MONGO) {
+        await dropMongoData()
+        await initMongoData()
+        console.log('[MongoDB] 初始化 成功')
+      }
     } catch (error) {
       console.log('[MongoDB] 初始化 失败', uri, error)
       return
