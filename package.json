@@ -28,6 +28,7 @@
     "@web-steps/oss": "^0.1.6",
     "@web-steps/server": "^0.1.6",
     "axios": "^0.19.2",
+    "connect-mongo": "^3.2.0",
     "dotenv": "^8.2.0",
     "express-session": "^1.17.1",
     "mongoose": "^5.9.12",

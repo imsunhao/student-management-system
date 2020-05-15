@@ -18,6 +18,7 @@ export async function dropMongoData() {
 }
 
 export async function initMongoData() {
+  const db = mongoose.connection.db
   const initRootUser = async () => {
     const ROOT_ID = getENV('STUDENT_MANAGEMENT_SYSTEM_ID')
     const ROOT_PASSWORD = getENV('STUDENT_MANAGEMENT_SYSTEM_PASSWORD')

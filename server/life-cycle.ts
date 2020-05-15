@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/prefer-includes */
 import { GetUserServerConfig } from '@web-steps/config'
 import { T_INJECT_CONTEXT } from '../inject-context/type'
 import { TServerContext, TAPP } from '@web-steps/server'
@@ -7,15 +8,20 @@ import { createRouter } from 'server/router'
 import bodyParser from 'body-parser'
 import session from 'express-session'
 import Tests from 'tests'
+import connectMongo from 'connect-mongo'
+import mongoose from 'mongoose'
 
 const INIT_LIFE_CYCLE = process.env.INIT_LIFE_CYCLE
 if (!INIT_LIFE_CYCLE) process.env.INIT_LIFE_CYCLE = 'TRUE'
 
 function sessionInit(APP: TAPP) {
+  const MongoStore = connectMongo(session)
   const sess: session.SessionOptions = {
-    secret: 'keyboard cat',
+    secret: 'password;secret;',
+    store: new MongoStore({ mongooseConnection: mongoose.connection }),
     cookie: {},
-    saveUninitialized: false,
+    saveUninitialized: false, //  在存储某些内容之前不创建会话
+    resave: false, //如果未修改，则不保存会话
   }
 
   // if (isProduction) {
@@ -40,6 +46,7 @@ const getServerConfig: GetUserServerConfig = ({ resolve }) => {
       if (!INIT_LIFE_CYCLE) {
         mongooseInit()
       }
+      bodyParserInit(APP)
       sessionInit(APP)
     },
     renderContext(context: TServerContext<T_INJECT_CONTEXT>) {
@@ -65,7 +72,6 @@ const getServerConfig: GetUserServerConfig = ({ resolve }) => {
       res.end(html)
     },
     router(APP) {
-      bodyParserInit(APP)
       APP.use('/api', createRouter())
       console.log('[添加 api 路由]')
       if (process.env.TEST_ENV && process.send) {
@@ -75,6 +81,14 @@ const getServerConfig: GetUserServerConfig = ({ resolve }) => {
           if (messageKey === 'exit') process.exit(0)
         })
       }
+
+      /**
+       * handle error
+       */
+      APP.use((err, req, res, next) => {
+        if (/MongoError: E11000/.test(err)) return
+        console.error(err)
+      })
     },
   }
 }

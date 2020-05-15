@@ -19,20 +19,19 @@ export function createUserRouter() {
       }
       const users = await userOperation.find({ ID, password })
       const user = users[0]
-      let result
       if (user) {
-        result = user.toJSON()
+        const result = user.toJSON()
         delete result.__v
         delete result._id
         delete result.password
 
         req.session.user = result
-        req.session.save(err => {
-          console.error(err)
-        })
+        req.session.save(() => {})
         console.log('[login] from userOperation')
+        res.json(result)
+      } else {
+        res.status(400).end()
       }
-      res.json(result)
     } catch (err) {
       res.status(500).json(err)
     }
@@ -40,10 +39,7 @@ export function createUserRouter() {
 
   router.post('/logout', (req, res, next) => {
     console.log('[logout]')
-    delete req.session.user
-    req.session.save(err => {
-      console.error(err)
-    })
+    req.session.destroy(() => {})
     res.json({ status: 200 })
   })
 
