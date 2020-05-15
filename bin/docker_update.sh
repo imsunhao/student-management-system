@@ -20,7 +20,7 @@ workdir='/student-management-system'
 
 workspace="$container:$workdir"
 
-docker cp ./docker-bin/ $workspace/docker-bin/
+docker cp ./docker-bin $workspace/
 docker cp ./dist $workspace/
 docker cp ./src/index.template.html $workspace/src/
 docker cp ./package*.json $workspace/
