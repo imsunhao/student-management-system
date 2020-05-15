@@ -16,89 +16,110 @@ export async function setupPuppeteer() {
     }
   })
 
-  async function click(selector: string, options?: puppeteer.ClickOptions) {
-    await page.click(selector, options)
-  }
-
-  async function count(selector: string) {
-    return (await page.$$(selector)).length
-  }
-
-  async function text(selector: string) {
-    return await page.$eval(selector, node => node.textContent)
-  }
-
-  async function value(selector: string) {
-    return await page.$eval(selector, (node: HTMLInputElement) => node.value)
-  }
-
-  async function html(selector: string) {
-    return await page.$eval(selector, node => node.innerHTML)
-  }
-
-  async function classList(selector: string) {
-    return await page.$eval(selector, (node: any) => [...node.classList])
-  }
-
-  async function children(selector: string) {
-    return await page.$eval(selector, (node: any) => [...node.children])
-  }
-
-  async function isVisible(selector: string) {
-    const display = await page.$eval(selector, (node: HTMLElement) => {
-      return window.getComputedStyle(node).display
-    })
-    return display !== 'none'
-  }
-
-  async function isChecked(selector: string) {
-    return await page.$eval(selector, (node: HTMLInputElement) => node.checked)
-  }
-
-  async function isFocused(selector: string) {
-    return await page.$eval(selector, node => node === document.activeElement)
-  }
-
-  async function setValue(selector: string, value: string) {
-    const el = await page.$(selector)
-    if (el) {
-      await el.evaluate((node: HTMLInputElement) => (node.value = ''))
-      await el.type(value)
-    }
-  }
-
-  async function enterValue(selector: string, value: string) {
-    const el = await page.$(selector)
-    if (el) {
-      await el.evaluate((node: HTMLInputElement) => (node.value = ''))
-      await el.type(value)
-      await el.press('Enter')
-    }
-  }
-
-  async function clearValue(selector: string) {
-    return await page.$eval(selector, (node: HTMLInputElement) => (node.value = ''))
-  }
-
-  async function destroy() {
-    await browser.close()
-  }
-
   return {
+    browser,
     page,
-    destroy,
-    click,
-    count,
-    text,
-    value,
-    html,
-    classList,
-    children,
-    isVisible,
-    isChecked,
-    isFocused,
-    setValue,
-    enterValue,
-    clearValue
   }
+}
+
+export let browser: puppeteer.Browser
+export let page: puppeteer.Page
+
+let puppeteerInit = false
+
+export async function click(selector: string, options?: puppeteer.ClickOptions) {
+  if (!puppeteerInit) return
+  await page.click(selector, options)
+}
+
+export async function count(selector: string) {
+  if (!puppeteerInit) return
+  return (await page.$$(selector)).length
+}
+
+export async function text(selector: string) {
+  if (!puppeteerInit) return
+  return await page.$eval(selector, node => node.textContent)
+}
+
+export async function value(selector: string) {
+  if (!puppeteerInit) return
+  return await page.$eval(selector, (node: HTMLInputElement) => node.value)
+}
+
+export async function html(selector: string) {
+  if (!puppeteerInit) return
+  return await page.$eval(selector, node => node.innerHTML)
+}
+
+export async function classList(selector: string) {
+  if (!puppeteerInit) return
+  return await page.$eval(selector, (node: any) => [...node.classList])
+}
+
+export async function children(selector: string) {
+  if (!puppeteerInit) return
+  return await page.$eval(selector, (node: any) => [...node.children])
+}
+
+export async function isVisible(selector: string) {
+  if (!puppeteerInit) return
+  const display = await page.$eval(selector, (node: HTMLElement) => {
+    return window.getComputedStyle(node).display
+  })
+  return display !== 'none'
+}
+
+export async function isChecked(selector: string) {
+  if (!puppeteerInit) return
+  return await page.$eval(selector, (node: HTMLInputElement) => node.checked)
+}
+
+export async function isFocused(selector: string) {
+  if (!puppeteerInit) return
+  return await page.$eval(selector, node => node === document.activeElement)
+}
+
+export async function setValue(selector: string, value: string) {
+  if (!puppeteerInit) return
+  const el = await page.$(selector)
+  if (el) {
+    await el.evaluate((node: HTMLInputElement) => (node.value = ''))
+    await el.type(value)
+  }
+}
+
+export async function enterValue(selector: string, value: string) {
+  if (!puppeteerInit) return
+  const el = await page.$(selector)
+  if (el) {
+    await el.evaluate((node: HTMLInputElement) => (node.value = ''))
+    await el.type(value)
+    await el.press('Enter')
+  }
+}
+
+export async function clearValue(selector: string) {
+  if (!puppeteerInit) return
+  return await page.$eval(selector, (node: HTMLInputElement) => (node.value = ''))
+}
+
+export async function destroy() {
+  if (!puppeteerInit) return
+  await browser.close()
+  puppeteerInit = false
+}
+
+export async function createPuppeteer() {
+  if (puppeteerInit) return
+  puppeteerInit = true
+
+  browser = await puppeteer.launch(puppeteerOptions)
+  page = await browser.newPage()
+
+  page.on('console', e => {
+    if (e.type() === 'error') {
+      console.error(`Error from Puppeteer-loaded page:\n`, e)
+    }
+  })
 }
