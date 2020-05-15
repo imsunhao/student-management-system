@@ -26,22 +26,19 @@ function sessionInit(APP: TAPP) {
   APP.use(session(sess))
 }
 
+function bodyParserInit(APP: TAPP) {
+  APP.use(bodyParser.json())
+  APP.use(bodyParser.urlencoded({ extended: false }))
+  console.log('[添加 bodyParser 中间件]')
+}
+
 const getServerConfig: GetUserServerConfig = ({ resolve }) => {
   requrieENVConfig(resolve('mongodb/mongo.env'))
 
   return {
     beforeCreated(APP) {
       if (!INIT_LIFE_CYCLE) {
-        APP.use(bodyParser.json())
-        APP.use(bodyParser.urlencoded({ extended: false }))
         mongooseInit()
-        if (process.env.TEST_ENV && process.send) {
-          process.send({ messageKey: 'test-start' })
-          process.on('message', (message: Tests.NodeJS.ProcessMessage) => {
-            const { messageKey } = message
-            if (messageKey === 'exit') process.exit(0)
-          })
-        }
       }
       sessionInit(APP)
     },
@@ -68,10 +65,16 @@ const getServerConfig: GetUserServerConfig = ({ resolve }) => {
       res.end(html)
     },
     router(APP) {
-      console.log('[添加 bodyParser 中间件]')
-
+      bodyParserInit(APP)
       APP.use('/api', createRouter())
       console.log('[添加 api 路由]')
+      if (process.env.TEST_ENV && process.send) {
+        process.send({ messageKey: 'test-start' })
+        process.on('message', (message: Tests.NodeJS.ProcessMessage) => {
+          const { messageKey } = message
+          if (messageKey === 'exit') process.exit(0)
+        })
+      }
     },
   }
 }
