@@ -1,10 +1,7 @@
 import path from 'path'
 import fs from 'fs'
 import { page } from './e2e'
-
-const resolve = (...args: string[]) => {
-  return path.resolve.apply(undefined, [__dirname, '../..', ...args])
-}
+import { resolve } from './path'
 
 const screenshotDir = './dist/test-screenshot/'
 

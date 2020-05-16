@@ -5,15 +5,20 @@ const puppeteerOptions: puppeteer.LaunchOptions = process.env.CI
   : { args: ['--ignore-certificate-errors'] }
 
 puppeteerOptions.executablePath = '/Applications/Google Chrome.app/Contents/MacOS/Google Chrome'
+puppeteerOptions.headless = false
 
 export async function setupPuppeteer() {
   const browser = await puppeteer.launch(puppeteerOptions)
   const page = await browser.newPage()
+  await page.setRequestInterception(true)
 
   page.on('console', e => {
     if (e.type() === 'error') {
       console.error(`Error from Puppeteer-loaded page:\n`, e)
     }
+  })
+  page.on('request', req => {
+    req.continue()
   })
 
   return {
@@ -117,9 +122,15 @@ export async function createPuppeteer() {
   browser = await puppeteer.launch(puppeteerOptions)
   page = await browser.newPage()
 
+  await page.setRequestInterception(true)
+
   page.on('console', e => {
     if (e.type() === 'error') {
       console.error(`Error from Puppeteer-loaded page:\n`, e)
     }
+  })
+
+  page.on('request', req => {
+    req.continue()
   })
 }

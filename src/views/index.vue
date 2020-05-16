@@ -3,14 +3,14 @@
     <h1 id="title">学生管理系统</h1>
     <el-form ref="form" :model="user" label-width="80px">
       <el-form-item label="用户ID">
-        <el-input v-model="user.ID"></el-input>
+        <el-input id="user-id" v-model="user.ID"></el-input>
       </el-form-item>
       <el-form-item label="用户密码">
-        <el-input v-model="user.password" type="password"></el-input>
+        <el-input id="user-password" v-model="user.password" type="password"></el-input>
       </el-form-item>
     </el-form>
-    <el-button type="primary" v-if="!hasUser" @click="login">登录</el-button>
-    <el-button type="primary" v-if="hasUser" @click="logout">退出</el-button>
+    <el-button id="login" type="primary" v-if="!hasUser" @click="login">登录</el-button>
+    <el-button id="logout" type="primary" v-if="hasUser" @click="logout">退出</el-button>
     <div v-if="hasUser">
       <h3>ID: {{ storeUser.ID }}</h3>
       <h3>name: {{ storeUser.name }}</h3>
@@ -26,8 +26,8 @@ import { getState, dispatch, getGetter } from 'src/store'
 
 const createUser = () => {
   const user: User.login = {
-    ID: 'admin',
-    password: '123456',
+    ID: '',
+    password: '',
   }
   return user
 }

@@ -10,6 +10,7 @@ let init = false
 
 export function mongooseInit() {
   if (init) return
+  console.log('[MongoDB] init')
   init = true
 
   mongoose.set('useCreateIndex', true)

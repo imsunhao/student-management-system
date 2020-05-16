@@ -1,8 +1,9 @@
 /* eslint-disable jest/expect-expect */
 import { Execa } from './utils/node'
 import Tests from 'tests'
-import { createPuppeteer, page, text, destroy } from './utils/e2e'
+import { createPuppeteer, page, text, destroy, setValue, click } from './utils/e2e'
 import { screenshot, initScreenshot } from './utils/screenshot'
+import { envsInit } from './utils/envs'
 import { Log } from './utils/log'
 import { isShow, isRead, timeout, url, useCache, port } from './setting'
 import execa from 'execa'
@@ -19,6 +20,7 @@ const beforeExit = async () => {
 describe('e2e Tests', () => {
   createPuppeteer()
   initScreenshot()
+  envsInit()
 
   test(
     'init server',
@@ -42,7 +44,7 @@ describe('e2e Tests', () => {
     async () => {
       try {
         await page.goto(url.home, { timeout: 5000 })
-        Log.log('[Puppeteer] goto', url.home)
+        Log.log('[Puppeteer] goto', '首页', url.home)
         const result = await text('#title')
         expect(result).toBe('学生管理系统')
         await screenshot('index/首页')
@@ -54,21 +56,25 @@ describe('e2e Tests', () => {
     timeout,
   )
 
-  // test(
-  //   '首页-admin-登录',
-  //   async () => {
-  //     try {
-  //       await page.goto(url.home, { timeout: 5000 })
-  //       Log.log('[Puppeteer] goto', url.home)
-  //       const result = await text('#title')
-  //       expect(result).toBe('学生管理系统')
-  //       await screenshot('index/首页')
-  //       await beforeExit()
-  //     } catch (err) {
-  //       await beforeExit()
-  //       throw err
-  //     }
-  //   },
-  //   timeout,
-  // )
+  test(
+    '首页-admin-登录',
+    async () => {
+      try {
+        await page.goto(url.login, { timeout: 5000 })
+        Log.log('[Puppeteer] goto', '登录页', url.login)
+
+        await setValue('#user-id', process.env.STUDENT_MANAGEMENT_SYSTEM_ID)
+        await setValue('#user-password', process.env.STUDENT_MANAGEMENT_SYSTEM_PASSWORD)
+        await click('#login')
+
+        // expect(result).toBe('学生管理系统')
+        await screenshot('index/登录')
+        await beforeExit()
+      } catch (err) {
+        await beforeExit()
+        throw err
+      }
+    },
+    timeout,
+  )
 })
