@@ -1,7 +1,7 @@
 /* eslint-disable jest/expect-expect */
 import { Execa } from './utils/node'
 import Tests from 'tests'
-import { createPuppeteer, page, text, destroy, setValue, click } from './utils/e2e'
+import { createPuppeteer, page, text, destroy, setValue, click, waitResponse } from './utils/e2e'
 import { screenshot, initScreenshot } from './utils/screenshot'
 import { envsInit } from './utils/envs'
 import { Log } from './utils/log'
@@ -55,19 +55,32 @@ describe('e2e Tests', () => {
     timeout,
   )
 
+  const adminUserLogin = async () => {
+    await page.goto(url.login, { timeout: 5000 })
+    Log.log('[Puppeteer] goto', '登录页', url.login)
+
+    await setValue('#user-id', process.env.STUDENT_MANAGEMENT_SYSTEM_ID)
+    await setValue('#user-password', process.env.STUDENT_MANAGEMENT_SYSTEM_PASSWORD)
+    await click('#login')
+    await waitResponse()
+  }
+
   test(
     '首页-admin-登录',
     async () => {
       try {
-        await page.goto(url.login, { timeout: 5000 })
-        Log.log('[Puppeteer] goto', '登录页', url.login)
+        await adminUserLogin()
+        await screenshot('login/登录')
 
-        await setValue('#user-id', process.env.STUDENT_MANAGEMENT_SYSTEM_ID)
-        await setValue('#user-password', process.env.STUDENT_MANAGEMENT_SYSTEM_PASSWORD)
-        await click('#login')
+        expect(await text('.login-success')).toBe('登录成功')
 
-        // expect(result).toBe('学生管理系统')
-        await screenshot('index/登录')
+        await click('#logout')
+
+        await waitResponse()
+        await screenshot('login/退出')
+
+        expect(await text('.logout-success')).toBe('用户退出')
+
         await beforeExit()
       } catch (err) {
         await beforeExit()

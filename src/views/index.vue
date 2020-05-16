@@ -60,7 +60,7 @@ export default {
           data: this.user,
           ssr: undefined,
         })
-        Message.success('登录成功')
+        Message.success({ message: '登录成功', customClass: 'login-success' })
       } catch (e) {
         Message.error(e)
       }
@@ -68,7 +68,7 @@ export default {
     async logout() {
       try {
         await dispatch(this.$store, 'USER_LOGOUT', { ssr: undefined })
-        Message.success('退出登录成功')
+        Message.success({ message: '用户退出', customClass: 'logout-success' })
       } catch (e) {
         Message.error(e)
       }

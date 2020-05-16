@@ -30,6 +30,12 @@ export async function setupPuppeteer() {
 export let browser: puppeteer.Browser
 export let page: puppeteer.Page
 
+let resolve: any
+
+export async function waitResponse() {
+  return await new Promise<puppeteer.Response>(r => (resolve = r))
+}
+
 let puppeteerInit = false
 
 export async function click(selector: string, options?: puppeteer.ClickOptions) {
@@ -132,5 +138,9 @@ export async function createPuppeteer() {
 
   page.on('request', req => {
     req.continue()
+  })
+
+  page.on('response', res => {
+    if (resolve) resolve(res)
   })
 }
