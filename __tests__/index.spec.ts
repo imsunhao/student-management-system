@@ -28,7 +28,6 @@ describe('e2e Tests', () => {
       const nodeArgv = ['node_modules/@web-steps/cli/bin/web-steps', 'dev', `--cache=${useCache}`, `--port=${port}`]
 
       childProcess = Execa.runNodeIPC(nodeArgv, { isSilence: !isShow, isRead })
-
       childProcess.on('message', (message: Tests.NodeJS.ProcessMessage) => {
         const { messageKey } = message
         if (messageKey === 'test-start') {

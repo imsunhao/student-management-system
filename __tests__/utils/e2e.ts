@@ -5,7 +5,7 @@ const puppeteerOptions: puppeteer.LaunchOptions = process.env.CI
   : { args: ['--ignore-certificate-errors'] }
 
 puppeteerOptions.executablePath = '/Applications/Google Chrome.app/Contents/MacOS/Google Chrome'
-puppeteerOptions.headless = false
+puppeteerOptions.headless = true
 
 export async function setupPuppeteer() {
   const browser = await puppeteer.launch(puppeteerOptions)

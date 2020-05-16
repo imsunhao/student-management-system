@@ -30,12 +30,22 @@ function sessionInit(APP: TAPP) {
   // }
 
   APP.use(session(sess))
+  console.log('[添加 session 中间件]')
 }
 
 function bodyParserInit(APP: TAPP) {
   APP.use(bodyParser.json())
   APP.use(bodyParser.urlencoded({ extended: false }))
   console.log('[添加 bodyParser 中间件]')
+}
+
+function handleErrorInit(APP: TAPP) {
+  APP.use((err, req, res, next) => {
+    // console.log('[handleError]')
+    if (/MongoError: E11000/.test(err)) return
+    console.error(err)
+  })
+  console.log('[添加 handleError 中间件]')
 }
 
 const getServerConfig: GetUserServerConfig = ({ resolve }) => {
@@ -74,6 +84,8 @@ const getServerConfig: GetUserServerConfig = ({ resolve }) => {
     router(APP) {
       APP.use('/api', createRouter())
       console.log('[添加 api 路由]')
+      handleErrorInit(APP)
+
       if (process.env.TEST_ENV && process.send) {
         process.send({ messageKey: 'test-start' })
         process.on('message', (message: Tests.NodeJS.ProcessMessage) => {
@@ -81,14 +93,6 @@ const getServerConfig: GetUserServerConfig = ({ resolve }) => {
           if (messageKey === 'exit') process.exit(0)
         })
       }
-
-      /**
-       * handle error
-       */
-      APP.use((err, req, res, next) => {
-        if (/MongoError: E11000/.test(err)) return
-        console.error(err)
-      })
     },
   }
 }

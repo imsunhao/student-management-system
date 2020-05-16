@@ -55,17 +55,17 @@ export function mongooseInit() {
   connectWithRetry()
 
   db.once('open', async function() {
-    console.log('[MongoDB] 连接成功', uri)
+    console.log('\n[MongoDB] 连接成功', uri)
     db.on('error', console.error.bind(console, '[MongoDB] 错误：'))
 
     try {
       if (process.env.TEST_ENV || process.env.INIT_MONGO) {
         await dropMongoData()
         await initMongoData()
-        console.log('[MongoDB] 初始化 成功')
+        console.log('\n\n[MongoDB] 初始化 成功\n\n')
       }
     } catch (error) {
-      console.log('[MongoDB] 初始化 失败', uri, error)
+      console.log('\n\n[MongoDB] 初始化 失败\n\n', uri, error)
       return
     }
   })
