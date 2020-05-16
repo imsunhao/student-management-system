@@ -15,7 +15,7 @@ export function createUserRouter() {
     try {
       const { ID, password } = req.body as User.login
       if (!ID || !password) {
-        return res.json()
+        return res.status(400).end()
       }
       const users = await userOperation.find({ ID, password })
       const user = users[0]
