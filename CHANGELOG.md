@@ -1,3 +1,21 @@
+## [0.1.3](https://github.com/imsunhao/student-management-system/compare/v0.1.2...v0.1.3) (2020-05-16)
+
+
+### Features
+
+* 调整 element-ui 为 dependencies ([9d40789](https://github.com/imsunhao/student-management-system/commit/9d4078933d2bb5779ebdff2270552e76675f9e9b))
+
+
+
+## [0.1.3](https://github.com/imsunhao/student-management-system/compare/v0.1.2...v0.1.3) (2020-05-16)
+
+
+### Features
+
+* 调整 element-ui 为 dependencies ([9d40789](https://github.com/imsunhao/student-management-system/commit/9d4078933d2bb5779ebdff2270552e76675f9e9b))
+
+
+
 ## [0.1.2](https://github.com/imsunhao/student-management-system/compare/v0.1.1...v0.1.2) (2020-05-16)
 
 
