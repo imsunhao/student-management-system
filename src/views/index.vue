@@ -61,6 +61,7 @@ export default {
           ssr: undefined,
         })
         Message.success({ message: '登录成功', customClass: 'login-success' })
+        this.$router.push({ name: 'app' })
       } catch (e) {
         Message.error(e)
       }

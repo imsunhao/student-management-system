@@ -33,7 +33,11 @@ export let page: puppeteer.Page
 let resolve: any
 
 export async function waitResponse() {
-  return await new Promise<puppeteer.Response>(r => (resolve = r))
+  const result = await new Promise<puppeteer.Response>(r => (resolve = r))
+  let res: any
+  setTimeout(() => res(), 1000)
+  await new Promise<void>(r => (res = r))
+  return result
 }
 
 let puppeteerInit = false

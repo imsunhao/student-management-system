@@ -24,7 +24,7 @@ export interface PageInfo {
 function getPageInfoTitle(pageInfo: PageInfo) {
   if (pageInfo.title) return pageInfo.title
   if (typeof pageInfo.subTitle === 'string') {
-    return (pageInfo.subTitlePrefix || '轻咔 - ') + pageInfo.subTitle
+    return (pageInfo.subTitlePrefix || '学生管理系统 - ') + pageInfo.subTitle
   }
 }
 
@@ -43,6 +43,7 @@ export function getPageInfo(vm: Vue): PageInfo {
 
 export const ServerVuePageInfoMixin = {
   created() {
+    console.log('[ServerVuePageInfoMixin]')
     const pageInfo = getPageInfo(this)
     if (pageInfo) {
       this.$ssrContext.pageInfo = pageInfo

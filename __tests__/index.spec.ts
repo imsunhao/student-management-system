@@ -19,18 +19,18 @@ const beforeExit = async () => {
 
 describe('e2e Tests', () => {
   createPuppeteer()
-  initScreenshot()
   envsInit()
 
   test(
-    'init server',
+    '初始化 服务器',
     done => {
       const nodeArgv = ['node_modules/@web-steps/cli/bin/web-steps', 'dev', `--cache=${useCache}`, `--port=${port}`]
 
       childProcess = Execa.runNodeIPC(nodeArgv, { isSilence: !isShow, isRead })
       childProcess.on('message', (message: Tests.NodeJS.ProcessMessage) => {
         const { messageKey } = message
-        if (messageKey === 'test-start') {
+        if (messageKey === '启动服务器标识符') {
+          initScreenshot()
           done()
         }
       })
@@ -55,31 +55,51 @@ describe('e2e Tests', () => {
     timeout,
   )
 
-  const adminUserLogin = async () => {
+  /**
+   * 用户登录
+   * - 默认 管理员 登录
+   */
+  const userLogin = async ({ id, password }: { id?: string; password?: string } = {}) => {
     await page.goto(url.login, { timeout: 5000 })
     Log.log('[Puppeteer] goto', '登录页', url.login)
 
-    await setValue('#user-id', process.env.STUDENT_MANAGEMENT_SYSTEM_ID)
-    await setValue('#user-password', process.env.STUDENT_MANAGEMENT_SYSTEM_PASSWORD)
+    await setValue('#user-id', id || process.env.STUDENT_MANAGEMENT_SYSTEM_ID)
+    await setValue('#user-password', password || process.env.STUDENT_MANAGEMENT_SYSTEM_PASSWORD)
     await click('#login')
     await waitResponse()
   }
 
   test(
-    '首页-admin-登录',
+    '首页-管理员-登录',
     async () => {
       try {
-        await adminUserLogin()
+        await userLogin()
         await screenshot('login/登录')
 
         expect(await text('.login-success')).toBe('登录成功')
 
         await click('#logout')
-
         await waitResponse()
+
         await screenshot('login/退出')
 
         expect(await text('.logout-success')).toBe('用户退出')
+      } catch (err) {
+        await beforeExit()
+        throw err
+      }
+    },
+    timeout,
+  )
+
+  const newAdminUserPassword = 'password'
+
+  test(
+    '首页-用户管理-修改密码',
+    async () => {
+      try {
+        await userLogin()
+        expect(await text('.login-success')).toBe('登录成功')
 
         await beforeExit()
       } catch (err) {

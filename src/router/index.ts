@@ -6,6 +6,9 @@ Vue.use(Router)
 // Home Page
 const HomePage = () => import('../views/index.vue')
 
+// App Page
+const AppPage = () => import('../views/app/index.vue')
+
 export function createRouter() {
   return new Router({
     mode: 'history',
@@ -13,8 +16,13 @@ export function createRouter() {
       {
         path: '/',
         name: 'home',
-        component: HomePage
-      }
-    ]
+        component: HomePage,
+      },
+      {
+        path: '/app',
+        name: 'app',
+        component: AppPage,
+      },
+    ],
   })
 }

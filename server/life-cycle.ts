@@ -87,7 +87,7 @@ const getServerConfig: GetUserServerConfig = ({ resolve }) => {
       handleErrorInit(APP)
 
       if (process.env.TEST_ENV && process.send) {
-        process.send({ messageKey: 'test-start' })
+        process.send({ messageKey: '启动服务器标识符' })
         process.on('message', (message: Tests.NodeJS.ProcessMessage) => {
           const { messageKey } = message
           if (messageKey === 'exit') process.exit(0)
