@@ -33,3 +33,5 @@ echo "运行远程重启服务脚本"
 restart_script_path="$workdir/bin/restart.sh"
 
 ssh root@aliyun -t "$restart_script_path"
+
+npx ts-node ./scripts/dingding.ts --version=$tag

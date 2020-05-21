@@ -2,7 +2,7 @@
   "compilerOptions": {
     "outDir": "dist",
     "resolveJsonModule": true,
-    "module": "esnext",
+    "module": "commonjs",
     "moduleResolution": "node",
     "target": "esnext",
     "importHelpers": true,
@@ -30,7 +30,7 @@
     "web-steps.ts",
     "inject-context",
     "config",
-    "cdn",
+    "private-configuration",
     "src",
     "mongodb",
     "src/**/*.vue",

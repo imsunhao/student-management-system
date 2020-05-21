@@ -3,7 +3,7 @@ import getBaseConfig from './config/webpack-base'
 import getClientConfig from './config/webpack-client'
 import getServerConfig from './config/webpack-server'
 import { T_INJECT_CONTEXT } from './inject-context/type'
-import { cdn } from './cdn'
+import { cdn } from './private-configuration'
 
 const getConfig: GetUserConfig<T_INJECT_CONTEXT> = function({ resolve }) {
   return {
