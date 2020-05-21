@@ -5,8 +5,6 @@ tag=$1
 workdir='/workspace/student-management-system'
 workspace="root@aliyun:$workdir"
 
-yarn changelog
-
 git add *
 
 git commit -m "release:$tag"

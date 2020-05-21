@@ -7,17 +7,6 @@
 * 添加 钉钉机器人 ([f37c8c0](https://github.com/imsunhao/student-management-system/commit/f37c8c01f5b6ed4923286a2dfdc74c32aee2b036))
 
 
-
-## [0.1.4-alpha.0](https://github.com/imsunhao/student-management-system/compare/v0.1.3...v0.1.4-alpha.0) (2020-05-21)
-
-
-### Features
-
-* 测试 添加 用户管理 页面 ([e3b4c7f](https://github.com/imsunhao/student-management-system/commit/e3b4c7fd5d476c42e8aedcd17cddbc3fb5d1085b))
-* 添加 钉钉机器人 ([f37c8c0](https://github.com/imsunhao/student-management-system/commit/f37c8c01f5b6ed4923286a2dfdc74c32aee2b036))
-
-
-
 ## [0.1.3](https://github.com/imsunhao/student-management-system/compare/v0.1.2...v0.1.3) (2020-05-16)
 
 
@@ -26,7 +15,6 @@
 * 调整 element-ui 为 dependencies ([9d40789](https://github.com/imsunhao/student-management-system/commit/9d4078933d2bb5779ebdff2270552e76675f9e9b))
 
 
-
 ## [0.1.2](https://github.com/imsunhao/student-management-system/compare/v0.1.1...v0.1.2) (2020-05-16)
 
 
@@ -44,27 +32,6 @@
 * 添加 登录测试 ([ccd00a5](https://github.com/imsunhao/student-management-system/commit/ccd00a5d842ffdc3f6341546959e153ccaf61242))
 * 现在 测试端口 为 随机端口号 ([fbeac9b](https://github.com/imsunhao/student-management-system/commit/fbeac9b85c5f864905b0c0781855eab2f90ee42a))
 
-
-
-## [0.1.2](https://github.com/imsunhao/student-management-system/compare/v0.1.1...v0.1.2) (2020-05-16)
-
-
-### Bug Fixes
-
-* 修复 api login error ([45c30a0](https://github.com/imsunhao/student-management-system/commit/45c30a0c0211e2904b1cc291e57d0db6bfc9743d))
-* 修复 hot-reload 问题 ([6774a66](https://github.com/imsunhao/student-management-system/commit/6774a66fc300ed2b784a37d6ee4dbab446df3d1f))
-
-
-### Features
-
-* 代码结构优化 ([d252a54](https://github.com/imsunhao/student-management-system/commit/d252a54b34982201e9571e837057095fa680f85a))
-* 完善 用户登录 测试 ([a726b03](https://github.com/imsunhao/student-management-system/commit/a726b03de0b1fc407d67cc01bbbda49b7e78f7aa))
-* 添加 screenshot ([385dee8](https://github.com/imsunhao/student-management-system/commit/385dee8b4f8fa86d5aac2100212327b47c1458d7))
-* 添加 登录测试 ([ccd00a5](https://github.com/imsunhao/student-management-system/commit/ccd00a5d842ffdc3f6341546959e153ccaf61242))
-* 现在 测试端口 为 随机端口号 ([fbeac9b](https://github.com/imsunhao/student-management-system/commit/fbeac9b85c5f864905b0c0781855eab2f90ee42a))
-
-
-
 ## [0.1.1](https://github.com/imsunhao/student-management-system/compare/v0.1.0...v0.1.1) (2020-05-15)
 
 
@@ -76,35 +43,6 @@
 ### Features
 
 * 使用 mongodb 存储 session ([9815f5c](https://github.com/imsunhao/student-management-system/commit/9815f5c5fce97f430fdeaffbd84d89abaa1bae72))
-
-
-
-## [0.1.1](https://github.com/imsunhao/student-management-system/compare/v0.1.0...v0.1.1) (2020-05-15)
-
-
-### Bug Fixes
-
-* mongo DeprecationWarning: ([33470ad](https://github.com/imsunhao/student-management-system/commit/33470ad622fec0c939ffbbae16f2543b2bcf53b3))
-
-
-### Features
-
-* 使用 mongodb 存储 session ([9815f5c](https://github.com/imsunhao/student-management-system/commit/9815f5c5fce97f430fdeaffbd84d89abaa1bae72))
-
-
-
-# [0.1.0](https://github.com/imsunhao/student-management-system/compare/v0.1.0-alpha.6...v0.1.0) (2020-05-15)
-
-
-### Bug Fixes
-
-* 修复 更新服务器脚本 ([ab57daf](https://github.com/imsunhao/student-management-system/commit/ab57dafa8da05d570966391e05ce326a5989a59f))
-
-
-### Features
-
-* 完善 release脚本 ([8345707](https://github.com/imsunhao/student-management-system/commit/83457074289bae45c716376b19f41851b30c1c06))
-
 
 
 # [0.1.0](https://github.com/imsunhao/student-management-system/compare/v0.1.0-alpha.6...v0.1.0) (2020-05-15)
