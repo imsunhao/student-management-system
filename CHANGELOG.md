@@ -1,3 +1,13 @@
+## [0.1.4](https://github.com/imsunhao/student-management-system/compare/v0.1.4-alpha.0...v0.1.4) (2020-05-21)
+
+
+### Bug Fixes
+
+* 修复 relase 会产生 2次 changelog ([4370412](https://github.com/imsunhao/student-management-system/commit/4370412190cfb9950f0670731d3fc6dd8fb9beaf))
+* 钉钉机器人读取更新内容错误 ([2c2e7ce](https://github.com/imsunhao/student-management-system/commit/2c2e7ce4b50391262494071abd45b6b96c798f59))
+
+
+
 ## [0.1.4-alpha.0](https://github.com/imsunhao/student-management-system/compare/v0.1.3...v0.1.4-alpha.0) (2020-05-21)
 
 
