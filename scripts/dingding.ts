@@ -28,7 +28,9 @@ function getChangelog(path: string, version: string) {
   // CHANGELOG 本版本的初始位置
   let pos = CHANGELOG.indexOf('## [' + version)
   if (pos === -1) {
-    pos = 0
+    pos = CHANGELOG.indexOf('# [' + version)
+  }
+  if (pos === -1) {
     console.error(`[CHANGELOG] 找不到 本版本 [${version}] 的初始位置`)
     process.exit(1)
   } else {
