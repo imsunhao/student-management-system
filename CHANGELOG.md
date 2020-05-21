@@ -1,3 +1,23 @@
+## [0.1.4-alpha.0](https://github.com/imsunhao/student-management-system/compare/v0.1.3...v0.1.4-alpha.0) (2020-05-21)
+
+
+### Features
+
+* 测试 添加 用户管理 页面 ([e3b4c7f](https://github.com/imsunhao/student-management-system/commit/e3b4c7fd5d476c42e8aedcd17cddbc3fb5d1085b))
+* 添加 钉钉机器人 ([f37c8c0](https://github.com/imsunhao/student-management-system/commit/f37c8c01f5b6ed4923286a2dfdc74c32aee2b036))
+
+
+
+## [0.1.4-alpha.0](https://github.com/imsunhao/student-management-system/compare/v0.1.3...v0.1.4-alpha.0) (2020-05-21)
+
+
+### Features
+
+* 测试 添加 用户管理 页面 ([e3b4c7f](https://github.com/imsunhao/student-management-system/commit/e3b4c7fd5d476c42e8aedcd17cddbc3fb5d1085b))
+* 添加 钉钉机器人 ([f37c8c0](https://github.com/imsunhao/student-management-system/commit/f37c8c01f5b6ed4923286a2dfdc74c32aee2b036))
+
+
+
 ## [0.1.3](https://github.com/imsunhao/student-management-system/compare/v0.1.2...v0.1.3) (2020-05-16)
 
 

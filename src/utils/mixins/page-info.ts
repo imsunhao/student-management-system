@@ -43,7 +43,6 @@ export function getPageInfo(vm: Vue): PageInfo {
 
 export const ServerVuePageInfoMixin = {
   created() {
-    console.log('[ServerVuePageInfoMixin]')
     const pageInfo = getPageInfo(this)
     if (pageInfo) {
       this.$ssrContext.pageInfo = pageInfo
