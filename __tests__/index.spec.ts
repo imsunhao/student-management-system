@@ -2,7 +2,7 @@
 import { Execa } from './utils/node'
 import Tests from 'tests'
 import { createPuppeteer, page, text, destroy, setValue, click, waitResponse } from './utils/e2e'
-import { screenshot, initScreenshot } from './utils/screenshot'
+import { screenshot, initScreenshot, screenshotDir } from './utils/screenshot'
 import { envsInit } from './utils/envs'
 import { Log } from './utils/log'
 import { isShow, isRead, timeout, url, useCache, port } from './setting'
@@ -15,6 +15,7 @@ const beforeExit = async () => {
   childProcess.send({ messageKey: 'e2e' })
   Log.log('[Puppeteer] destroy')
   await destroy()
+  console.log('\n\n[Screenshot] 测试已完成 测试关键节点已截图\n\t截图存放位置:', screenshotDir)
 }
 
 describe('e2e Tests', () => {
@@ -42,8 +43,8 @@ describe('e2e Tests', () => {
     '首页',
     async () => {
       try {
-        await page.goto(url.home, { timeout: 5000 })
-        Log.log('[Puppeteer] goto', '首页', url.home)
+        await page.goto(url.Home, { timeout: 5000 })
+        Log.log('[Puppeteer] goto', '首页', url.Home)
         const result = await text('#title')
         expect(result).toBe('学生管理系统')
         await screenshot('index/首页')
@@ -60,8 +61,8 @@ describe('e2e Tests', () => {
    * - 默认 管理员 登录
    */
   const userLogin = async ({ id, password }: { id?: string; password?: string } = {}) => {
-    await page.goto(url.login, { timeout: 5000 })
-    Log.log('[Puppeteer] goto', '登录页', url.login)
+    await page.goto(url.Login, { timeout: 5000 })
+    Log.log('[Puppeteer] goto', '登录页', url.Login)
 
     await setValue('#user-id', id || process.env.STUDENT_MANAGEMENT_SYSTEM_ID)
     await setValue('#user-password', password || process.env.STUDENT_MANAGEMENT_SYSTEM_PASSWORD)
@@ -74,14 +75,14 @@ describe('e2e Tests', () => {
     async () => {
       try {
         await userLogin()
-        await screenshot('login/登录')
+        await screenshot('login/登录成功')
 
         expect(await text('.login-success')).toBe('登录成功')
 
         await click('#logout')
         await waitResponse()
 
-        await screenshot('login/退出')
+        await screenshot('login/退出成功')
 
         expect(await text('.logout-success')).toBe('用户退出')
       } catch (err) {
@@ -100,6 +101,8 @@ describe('e2e Tests', () => {
       try {
         await userLogin()
         expect(await text('.login-success')).toBe('登录成功')
+        await page.goto(url.UserBaseInfo, { timeout: 5000 })
+        await screenshot('app/用户管理/基础信息')
 
         await beforeExit()
       } catch (err) {

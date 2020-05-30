@@ -7,7 +7,16 @@ Vue.use(Router)
 const HomePage = () => import('../views/index.vue')
 
 // App Page
-const AppPage = () => import('../views/app/index.vue')
+const App = {
+  index: () => import('../views/app/index.vue'),
+  UserManagement: {
+    UserBaseInfo: () => import('../views/app/user-management/UserBaseInfo.vue'),
+  },
+}
+
+const EmptyPage = {
+  template: '<router-view></router-view>',
+}
 
 export function createRouter() {
   return new Router({
@@ -15,13 +24,26 @@ export function createRouter() {
     routes: [
       {
         path: '/',
-        name: 'home',
+        name: 'Home',
         component: HomePage,
       },
       {
         path: '/app',
-        name: 'app',
-        component: AppPage,
+        name: 'App',
+        component: App.index,
+        children: [
+          {
+            path: 'user-management',
+            component: EmptyPage,
+            children: [
+              {
+                path: 'base-info',
+                name: 'UserBaseInfo',
+                component: App.UserManagement.UserBaseInfo,
+              },
+            ],
+          },
+        ],
       },
     ],
   })

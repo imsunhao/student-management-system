@@ -9,8 +9,7 @@
         <el-input id="user-password" v-model="user.password" type="password"></el-input>
       </el-form-item>
     </el-form>
-    <el-button id="login" type="primary" v-if="!hasUser" @click="login">登录</el-button>
-    <el-button id="logout" type="primary" v-if="hasUser" @click="logout">退出</el-button>
+    <userButtonGroup v-bind="{ user }" />
     <div v-if="hasUser">
       <h3>ID: {{ storeUser.ID }}</h3>
       <h3>name: {{ storeUser.name }}</h3>
@@ -21,8 +20,8 @@
 
 <script lang="ts">
 import { User } from 'request'
-import { Message } from 'element-ui'
-import { getState, dispatch, getGetter } from 'src/store'
+import { getState, getGetter } from 'src/store'
+import userButtonGroup from 'src/components/button-group/UserButtonGroup.vue'
 
 const createUser = () => {
   const user: User.login = {
@@ -33,6 +32,9 @@ const createUser = () => {
 }
 
 export default {
+  components: {
+    userButtonGroup,
+  },
   pageInfo() {
     return {
       title: '学生管理系统',
@@ -53,27 +55,6 @@ export default {
       return getGetter(this.$store, 'hasUser')
     },
   },
-  methods: {
-    async login() {
-      try {
-        await dispatch(this.$store, 'FETCH_USER', {
-          data: this.user,
-          ssr: undefined,
-        })
-        Message.success({ message: '登录成功', customClass: 'login-success' })
-        // this.$router.push({ name: 'app' })
-      } catch (e) {
-        Message.error(e)
-      }
-    },
-    async logout() {
-      try {
-        await dispatch(this.$store, 'USER_LOGOUT', { ssr: undefined })
-        Message.success({ message: '用户退出', customClass: 'logout-success' })
-      } catch (e) {
-        Message.error(e)
-      }
-    },
-  },
+  methods: {},
 }
 </script>

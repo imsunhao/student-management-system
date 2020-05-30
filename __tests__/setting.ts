@@ -15,7 +15,8 @@ export const port = getRandomArbitrary(10000, 40000)
 const indexUrl = `http://127.0.0.1:${port}`
 
 export const url = {
-  home: `${indexUrl}/`,
-  login: `${indexUrl}/`,
-  app: `${indexUrl}/app`,
+  Home: `${indexUrl}/`,
+  Login: `${indexUrl}/`,
+  App: `${indexUrl}/app`,
+  UserBaseInfo: `${indexUrl}/app/user-management/base-info`,
 }
