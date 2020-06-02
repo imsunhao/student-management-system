@@ -1,19 +1,21 @@
 import express from 'express'
-import { User } from 'request'
+import { Api } from 'request'
 import { userOperation } from 'server/mongo/schema/user'
-
-export const uri = '/user'
+import { createStatementHelper } from 'server/router/helper'
 
 export function createUserRouter() {
   const router = express.Router()
-  router.post('/login', async (req, res, next) => {
+
+  const use = createStatementHelper<Api.User>(router, 'api', 'user')
+
+  use('login', async (req, res, next) => {
     console.log('POST /login', req.body)
     if (req.session.user) {
       console.log('[login] from session')
       return res.json(req.session.user)
     }
     try {
-      const { ID, password } = req.body as User.login
+      const { ID, password } = req.body
       if (!ID || !password) {
         return res.status(400).end()
       }
@@ -37,18 +39,19 @@ export function createUserRouter() {
     }
   })
 
-  router.post('/logout', (req, res, next) => {
+  use('logout', (req, res, next) => {
     console.log('[logout]')
     req.session.destroy(() => {})
     res.json({ status: 200 })
   })
 
-  router.post('/register', async (req, res, next) => {
+  use('register', async (req, res, next) => {
     try {
       res.json(await userOperation.insert(req.body))
     } catch (err) {
       res.status(500).json(err)
     }
   })
+
   return router
 }

@@ -2,7 +2,6 @@
  * 有关 vuex-store 类型集合
  */
 declare module 'store' {
-  import { SSRPayload } from 'request'
   import { GlobalMutations, GlobalActions } from 'src/store'
   import { TUserState } from 'src/store/local-modules/user/state'
 
@@ -12,7 +11,6 @@ declare module 'store' {
      */
     type ActionPayload<T = undefined> = {
       data?: T
-      ssr: SSRPayload
     }
 
     /**

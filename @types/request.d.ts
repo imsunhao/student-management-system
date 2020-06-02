@@ -3,18 +3,14 @@
  */
 declare module 'request' {
   declare namespace Request {
-    /**
-     * action
-     * - server端 必须传递的参数
-     */
-    type SSRPayload = {
-      cookies?: any
-    }
-
-    namespace User {
-      type login = {
-        ID: string
-        password: string
+    namespace Api {
+      type User = {
+        login: {
+          ID: string
+          password: string
+        }
+        logout: any
+        register: any
       }
     }
   }

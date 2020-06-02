@@ -1,8 +1,10 @@
 import express from 'express'
-import { createUserRouter, uri as userUri } from './user'
+import { createUserRouter } from './user'
+import { createStatementHelper } from 'server/router/helper'
 
 export function createRouter() {
   const router = express.Router()
-  router.use(userUri, createUserRouter())
+  const use = createStatementHelper<any>(router, 'api')
+  use('user', createUserRouter())
   return router
 }

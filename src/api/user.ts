@@ -1,38 +1,7 @@
-import ApiActor from './base-actor'
-
-import { SSRPayload, User } from 'request'
+import { Api } from 'request'
 import { TUser } from 'schema'
+import axios from 'src/utils/axios.ts'
 
-class UserApiActor extends ApiActor<TUser> {
-  /**
-   * 用户登录
-   */
-  login(data: User.login, { cookies }: SSRPayload = {}) {
-    return this.post({
-      action: 'login',
-      cookies,
-      data,
-    })
-  }
+import { createActorHelper } from 'server/router/helper'
 
-  /**
-   * 用户退出
-   */
-  logout({ cookies }: SSRPayload = {}) {
-    return this.post({
-      action: 'logout',
-      cookies,
-    })
-  }
-
-  /**
-   * 用户注册
-   */
-  register() {
-    return this.get({
-      action: 'register',
-    })
-  }
-}
-
-export const userApi = new UserApiActor('user')
+export const userApi = createActorHelper<Api.User, TUser>(axios, 'api', 'user')

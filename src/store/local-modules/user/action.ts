@@ -1,7 +1,7 @@
 import { globalHelper } from 'src/store/helpers'
 import { ActionPayload } from 'store'
 
-import { User } from 'request'
+import { Api } from 'request'
 import { userApi } from 'src/api/user'
 import { commit } from 'src/store'
 
@@ -9,10 +9,12 @@ export const userAction = globalHelper.makeActions({
   /**
    * 获取用户数据
    */
-  async FETCH_USER(ctx, payload: ActionPayload<User.login | undefined>) {
+  async FETCH_USER(ctx, payload: ActionPayload<Api.User['login'] | undefined>) {
     if (ctx.state.user && ctx.state.user.ID) return
-    const result = await userApi.login(payload.data, payload.ssr)
-    commit(ctx, 'SET_USER', result)
+    const result = await userApi.login({
+      data: payload.data,
+    })
+    commit(ctx, 'SET_USER', result.data)
   },
 
   /**
@@ -21,6 +23,6 @@ export const userAction = globalHelper.makeActions({
   async USER_LOGOUT(ctx, payload: ActionPayload) {
     if (!ctx.state.user || !ctx.state.user.ID) return
     commit(ctx, 'SET_USER', {} as any)
-    await userApi.logout(payload.ssr)
+    await userApi.logout()
   },
 })
