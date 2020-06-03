@@ -15,6 +15,5 @@ declare const __FEATURE_OPTIONS__: boolean
 declare const __FEATURE_SUSPENSE__: boolean
 
 //SSR
-
 declare const __HOST_GLOBAL__: any
 declare const __IS_SERVER__: boolean

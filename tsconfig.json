@@ -1,30 +1,23 @@
 {
   "compilerOptions": {
     "outDir": "dist",
-    "resolveJsonModule": true,
     "module": "commonjs",
     "moduleResolution": "node",
     "target": "esnext",
-    "importHelpers": true,
-    "strict": false,
-    "sourceMap": true,
-    "experimentalDecorators": true,
     "baseUrl": "./",
     "paths": {
       "*": ["*", "src/*"]
     },
-    "allowSyntheticDefaultImports": true,
-    "downlevelIteration": true,
-    "noUnusedLocals": false,
-    "strictPropertyInitialization": false,
-    "skipLibCheck": true,
-    "keyofStringsOnly": true,
     "lib": ["esnext", "dom"],
     "jsx": "preserve",
+    "importHelpers": true,
+    "strict": false,
+    "sourceMap": true,
+    "noUnusedLocals": false,
+    "skipLibCheck": true,
+    "keyofStringsOnly": true,
     "resolveJsonModule": true,
-    "esModuleInterop": true,
-    "removeComments": false,
-    "strictNullChecks": false
+    "esModuleInterop": true
   },
   "include": [
     "web-steps.ts",

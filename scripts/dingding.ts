@@ -1,4 +1,4 @@
-import { DingDingRobot } from '@web-steps/release'
+import { DingDingRobot } from '@web-steps/helper-release'
 import { dingdingRobotSetting } from '../private-configuration'
 import minimist from 'minimist'
 import fs from 'fs'

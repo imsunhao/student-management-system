@@ -19,9 +19,9 @@ Vue.use(Vuex)
 let store: Store<TStore.State>
 
 /// <RemoveCodeBlock=server-production>
-import { WebpackHelper } from '@web-steps/helper'
+import { WebpackHelper } from '@web-steps/helper-webpack'
 if (module.hot) {
-  const webpackHelper: WebpackHelper = require('@web-steps/helper').webpackHelper
+  const webpackHelper: WebpackHelper = require('@web-steps/helper-webpack').webpackHelper
 
   webpackHelper.hotReload(
     module,
