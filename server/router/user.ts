@@ -1,14 +1,14 @@
 import express from 'express'
 import { Api } from 'request'
 import { userOperation } from 'server/mongo/schema/user'
-import { createStatementHelper } from 'server/router/helper'
+import { createRouterHelper } from 'src/api/helper'
 
 export function createUserRouter() {
   const router = express.Router()
 
-  const use = createStatementHelper<Api.User>(router, 'api', 'user')
+  const helper = createRouterHelper<Api.User>(router, 'api', 'user')
 
-  use('login', async (req, res, next) => {
+  helper.use('login', async (req, res, next) => {
     console.log('POST /login', req.body)
     if (req.session.user) {
       console.log('[login] from session')
@@ -39,13 +39,13 @@ export function createUserRouter() {
     }
   })
 
-  use('logout', (req, res, next) => {
+  helper.use('logout', (req, res, next) => {
     console.log('[logout]')
     req.session.destroy(() => {})
     res.json({ status: 200 })
   })
 
-  use('register', async (req, res, next) => {
+  helper.use('register', async (req, res, next) => {
     try {
       res.json(await userOperation.insert(req.body))
     } catch (err) {

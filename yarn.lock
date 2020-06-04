@@ -808,23 +808,23 @@
   optionalDependencies:
     prettier "^1.18.2"
 
-"@web-steps/cli@^0.2.0-alpha.0":
-  version "0.2.0-alpha.0"
-  resolved "https://registry.yarnpkg.com/@web-steps/cli/-/cli-0.2.0-alpha.0.tgz#cb43e1049afb4df690b640569dd2349d400eadfd"
-  integrity sha512-jmTt/Ud4lrS54Xrg7sECQjCRE8oaXqFGyKdHjtyUTdyQVrJArCPr3Os1Z+s9ij5LFpO4iAHpMdp84C174rPJwA==
+"@web-steps/cli@^0.2.0-alpha.4":
+  version "0.2.0-alpha.4"
+  resolved "https://registry.yarnpkg.com/@web-steps/cli/-/cli-0.2.0-alpha.4.tgz#220f496913dc8bccde294b90d7f357e90fa4b4df"
+  integrity sha512-YbUYyMl53ViyPHYx3Ibs5q+jREDOLiWZ4rmqBhUM0Ub65FhlRLAzZOfB0ujfDK03+tRy6JWAOT+xhyTMgxN5bA==
 
-"@web-steps/compiler@^0.2.0-alpha.0":
-  version "0.2.0-alpha.0"
-  resolved "https://registry.yarnpkg.com/@web-steps/compiler/-/compiler-0.2.0-alpha.0.tgz#e3d8dad1ab507f9c2181535055a954895db80942"
-  integrity sha512-TpdgxlJx289eeU0iVQnFr3gTdAmfo2DZPaVEYBKRB1pW4T/OJyRwdtmYX0OhBVL4S31QKGZsEQFUsKinMoARfQ==
+"@web-steps/compiler@^0.2.0-alpha.4":
+  version "0.2.0-alpha.4"
+  resolved "https://registry.yarnpkg.com/@web-steps/compiler/-/compiler-0.2.0-alpha.4.tgz#ee127776042480e973b7e5025bae9789b901771d"
+  integrity sha512-MKIIX8Xm/bo1C7PtU8dAaNdoojvQEFDnxqLSIVI+mPomSg3hzoGP/jBbElZeNPb+OJ2cJAYQP/CcBCi7C4sl8Q==
   dependencies:
     memory-fs "^0.5.0"
     require-from-string "^2.0.2"
 
-"@web-steps/config@^0.2.0-alpha.0":
-  version "0.2.0-alpha.0"
-  resolved "https://registry.yarnpkg.com/@web-steps/config/-/config-0.2.0-alpha.0.tgz#9776ebfbdc219e97514e108d40a1cee2f7e5efab"
-  integrity sha512-48dpn4nlaHDKi5prjBfaSxGEICWXc1GHkst30tiMFFoktP5Cq3RhJoAl53gcIW/+P5cRSZEGqW8/wcL4+4BmrA==
+"@web-steps/config@^0.2.0-alpha.4":
+  version "0.2.0-alpha.4"
+  resolved "https://registry.yarnpkg.com/@web-steps/config/-/config-0.2.0-alpha.4.tgz#a69ad8c4085f83e8c694b72ead7779b39678441e"
+  integrity sha512-s3is8R4uaBw0lMxBOATU+QAt+QYHLjeTWRDbvJouf3HA0Xl1ssoJNO1dGuwBtuqiCLJBZmeABxENgdzuqIBxLw==
   dependencies:
     "@types/express" "^4.17.2"
     "@types/terser-webpack-plugin" "^2.2.0"
@@ -848,64 +848,64 @@
     webpack-merge "^4.2.2"
     webpack-node-externals "^1.7.2"
 
-"@web-steps/helper-api@^0.2.0-alpha.0":
-  version "0.2.0-alpha.0"
-  resolved "https://registry.yarnpkg.com/@web-steps/helper-api/-/helper-api-0.2.0-alpha.0.tgz#a50430ab07cd3452678980ab9a0fb202d0fd42d8"
-  integrity sha512-PvV275jkzdMpnNqlS1URLhBoCEBKf+86jkRyW1PI7iBb7rR/1D93ymZ0SmsTZrPOWR05mcMNO1IOH7cb/LJ9Bw==
+"@web-steps/helper-api@^0.2.0-alpha.4":
+  version "0.2.0-alpha.4"
+  resolved "https://registry.yarnpkg.com/@web-steps/helper-api/-/helper-api-0.2.0-alpha.4.tgz#c074d22c3ff202be0cc4b327fb314a5b3dc4ebbc"
+  integrity sha512-j0nKZbmh8OJhjDOtU0xPR07TIyHzw3iRM7DbbmfTPcZ/TY6Qch9C4LrwXP49/d74wjy4BJ3Jt975FsogNfwsrQ==
 
-"@web-steps/helper-assets@^0.2.0-alpha.0":
-  version "0.2.0-alpha.0"
-  resolved "https://registry.yarnpkg.com/@web-steps/helper-assets/-/helper-assets-0.2.0-alpha.0.tgz#263b491b74a1783b556e4a291a51cf0b433ce2d0"
-  integrity sha512-4XG7E73i696X5JlJaYY19fPl5PEnAaVIdtdWA0lpOekUyeA9YSAAAXt6gW+ZXoO6BCEs/SGuEVL1tMUMis7EZA==
+"@web-steps/helper-assets@^0.2.0-alpha.4":
+  version "0.2.0-alpha.4"
+  resolved "https://registry.yarnpkg.com/@web-steps/helper-assets/-/helper-assets-0.2.0-alpha.4.tgz#74aae0a8fd50e14eabcc9fcd8545b055b295e27f"
+  integrity sha512-CviouSpX+4CoWFDpsxjX66pvf2K//+Sdk7y2zGWkhLbg0bq0b8u9h7RRVjhSJ9nV41KSo+HWLAQE2BTJpuhChA==
 
-"@web-steps/helper-release@^0.2.0-alpha.0":
-  version "0.2.0-alpha.0"
-  resolved "https://registry.yarnpkg.com/@web-steps/helper-release/-/helper-release-0.2.0-alpha.0.tgz#44febbfd77f5f09bda8baf1f1d4619b1ced8d0d5"
-  integrity sha512-LMpZnrxedaKVEneFiZiQ/d+i5Q+U+HU/2686/ZNbfaUkJoTdJ6TGPiwoOEamTI1bbEUoctkJLGcHoB2QwMvOAQ==
+"@web-steps/helper-release@^0.2.0-alpha.4":
+  version "0.2.0-alpha.4"
+  resolved "https://registry.yarnpkg.com/@web-steps/helper-release/-/helper-release-0.2.0-alpha.4.tgz#dd9ba38163c0f1acee421d98cc2d2a057a6f982d"
+  integrity sha512-Sy3hT0QAFmI1g8h3FhrjbaCS8xtDp4fUZuj8PG4QB5jMDUxibjDhbK9kNu0+HyxPpIe3pImW0iGmVn+v+ylDFQ==
 
-"@web-steps/helper-view-router@^0.2.0-alpha.0":
-  version "0.2.0-alpha.0"
-  resolved "https://registry.yarnpkg.com/@web-steps/helper-view-router/-/helper-view-router-0.2.0-alpha.0.tgz#f21b423f122d30d3a6f3f44135df322fbb6b7f71"
-  integrity sha512-REfX+kD3nHBCWjcVLMcqSAQtZULdhqscjV1QJkwl+bqkgov9+OmRjL//ayO4PDkyne4lRp8sC0H2XOV2PTlSUA==
+"@web-steps/helper-view-router@^0.2.0-alpha.4":
+  version "0.2.0-alpha.4"
+  resolved "https://registry.yarnpkg.com/@web-steps/helper-view-router/-/helper-view-router-0.2.0-alpha.4.tgz#509c90d3860d9a5b3237a87e3d469954080419e3"
+  integrity sha512-gy+IdEMDOcQPllg0brejXg//rFBOteVEfbz0tetsdwpUaYy2efLg78nMv5qq6/dzzH1Nvu+HmvYSyWM5724S7A==
 
-"@web-steps/helper-vue-router@^0.2.0-alpha.0":
-  version "0.2.0-alpha.0"
-  resolved "https://registry.yarnpkg.com/@web-steps/helper-vue-router/-/helper-vue-router-0.2.0-alpha.0.tgz#2c1216fb65ddbe5595846017eeee17b443ff4303"
-  integrity sha512-ELwNA2CSVwVwpalYRSRLKOOrjptfgD4RQ3PGyVW+4K3dN6rBq7Iu3KX5BOqZB7C2SJNGIqrdpH6cQTncaytYJw==
+"@web-steps/helper-vue-router@^0.2.0-alpha.4":
+  version "0.2.0-alpha.4"
+  resolved "https://registry.yarnpkg.com/@web-steps/helper-vue-router/-/helper-vue-router-0.2.0-alpha.4.tgz#09e140867b19569dd3d3c2f9a108a4966899c28f"
+  integrity sha512-EnXWHv9sAFX0fV0eMF2kVke2g6xKugukNLHWCqK/FdbA3OVmuQSE3rcqg0TH0BTIMEB+04tM3QDTtKnZxR0Wlw==
 
-"@web-steps/helper-vuex@^0.2.0-alpha.0":
-  version "0.2.0-alpha.0"
-  resolved "https://registry.yarnpkg.com/@web-steps/helper-vuex/-/helper-vuex-0.2.0-alpha.0.tgz#5f6cc5cd0bae07e4e8a33d538ed2b8aad0ca21d6"
-  integrity sha512-mFC7PgkdD3DuJvX4mLyEn/pw8rOKmSn9hbUuKA+s5cTsgP9e4ovJ9pRCc+OApcs9fNbPAGWk0Pa1a9321XTIyg==
+"@web-steps/helper-vuex@^0.2.0-alpha.4":
+  version "0.2.0-alpha.4"
+  resolved "https://registry.yarnpkg.com/@web-steps/helper-vuex/-/helper-vuex-0.2.0-alpha.4.tgz#0eef1a9690713cf6a154f172a88d9f9aa274b73c"
+  integrity sha512-+j7zJYPQ9u3/BTQIAM6oqN72kgWkZGL0OEvBqMhx088++5uITU6C/I5K9mMS4DxXptEtc/lpLQekNXhUqWCbYA==
 
-"@web-steps/helper-webpack@^0.2.0-alpha.0":
-  version "0.2.0-alpha.0"
-  resolved "https://registry.yarnpkg.com/@web-steps/helper-webpack/-/helper-webpack-0.2.0-alpha.0.tgz#13f65bcc3bf1f5795ca6119cdab0d26602bcf642"
-  integrity sha512-lQkJnYLDq55UzGajBrSzqjVkluKa+GXs5xF6xoL82OjrBkDAdcZlZuPBbBMnJxV53x26g4h09Bif3pqeEm8xgg==
+"@web-steps/helper-webpack@^0.2.0-alpha.4":
+  version "0.2.0-alpha.4"
+  resolved "https://registry.yarnpkg.com/@web-steps/helper-webpack/-/helper-webpack-0.2.0-alpha.4.tgz#f708f70ad9ba905adf3f91ea9dc3e5208b21bc5d"
+  integrity sha512-4zJt5JIXbRwZEHP7kUkT+CYLYtaqisALVfUN59NiIUhcWWGBU9bS12KwY3YY4qoxkY9kbF9oBmivulm9LfRj/w==
 
-"@web-steps/oss@0.2.0-alpha.0", "@web-steps/oss@^0.2.0-alpha.0":
-  version "0.2.0-alpha.0"
-  resolved "https://registry.yarnpkg.com/@web-steps/oss/-/oss-0.2.0-alpha.0.tgz#60d09da71ddb8d83673dd861762534400fe5ce83"
-  integrity sha512-fOg8G3CfITKT2Koqrl/7F3xt3wLrkeax8bVqfp2LorHB1vI6Oj08jjf4fcJdwl/k8aVW9YUxzRjRRKE4R8QBjw==
+"@web-steps/oss@0.2.0-alpha.4", "@web-steps/oss@^0.2.0-alpha.4":
+  version "0.2.0-alpha.4"
+  resolved "https://registry.yarnpkg.com/@web-steps/oss/-/oss-0.2.0-alpha.4.tgz#e67b64dfef5e37a2713f63f941c94324896197d5"
+  integrity sha512-fkDP4gxmGpmyEdpiFmxnyh+XMNMYSJz5YUInMZrJ8hMz2UmHHdp4q75OrBkXTWjczNL6ntNiiFbmCFLWrxBMTA==
   dependencies:
     ali-oss "^6.5.1"
     co "^4.6.0"
 
-"@web-steps/release@^0.2.0-alpha.0":
-  version "0.2.0-alpha.0"
-  resolved "https://registry.yarnpkg.com/@web-steps/release/-/release-0.2.0-alpha.0.tgz#dc0c808cb481137bb4fc4a7e2e75c4ab41660918"
-  integrity sha512-+BKg6VCL+4/gF7FyP1+mAYKuRmD7i+L9nmqmT42/wKB2IA1iECFsZAyoIEujdecuvpFSjaNxOTf7dt5znukAPQ==
+"@web-steps/release@^0.2.0-alpha.4":
+  version "0.2.0-alpha.4"
+  resolved "https://registry.yarnpkg.com/@web-steps/release/-/release-0.2.0-alpha.4.tgz#87f6baee3dad777f00192816a6674ed2c351f085"
+  integrity sha512-W6VjqzO0b7e7Wn16WywxzkZCBuK/7H41zVG8xaXofRDrW3iAunRKc8sUHl1DBXIvWC9z5v68I+Mz3gBRSJYOPg==
   dependencies:
-    "@web-steps/oss" "0.2.0-alpha.0"
+    "@web-steps/oss" "0.2.0-alpha.4"
     conventional-changelog-cli "^2.0.31"
     enquirer "^2.3.4"
     execa "^4.0.0"
     semver "^7.1.3"
 
-"@web-steps/server@^0.2.0-alpha.0":
-  version "0.2.0-alpha.0"
-  resolved "https://registry.yarnpkg.com/@web-steps/server/-/server-0.2.0-alpha.0.tgz#61cf184dc448cdd2984e4ead6975edca227f1564"
-  integrity sha512-NHQUq/8ECy0T4hq9YWsgYWibak9VHVdVMUwfarkIwsXHM0odD99jCL74BJu06xBrua5JE79RVD64QViuaRZm/w==
+"@web-steps/server@^0.2.0-alpha.4":
+  version "0.2.0-alpha.4"
+  resolved "https://registry.yarnpkg.com/@web-steps/server/-/server-0.2.0-alpha.4.tgz#dbd11d40742c7f799a97450e43994811bda5196e"
+  integrity sha512-LhqioqANa5ex/XHtgtzxEiNO4K+ORtQ53f/8kwvK4Kgo+zj1bTUq+AKVFla3geJTyO2Hay5zb1myfxOM5xzXcQ==
   dependencies:
     base64url "^3.0.1"
     express "^4.17.1"

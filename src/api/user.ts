@@ -1,7 +1,6 @@
 import { Api } from 'request'
-import { TUser } from 'schema'
 import axios from 'src/utils/axios.ts'
+import { createAxiosHelper } from 'src/api/helper'
 
-import { createActorHelper } from 'server/router/helper'
+export const userApi = createAxiosHelper<Api.User>(axios, 'api', 'user')
 
-export const userApi = createActorHelper<Api.User, TUser>(axios, 'api', 'user')
