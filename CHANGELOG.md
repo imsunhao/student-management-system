@@ -1,3 +1,15 @@
+## [0.1.5](https://github.com/imsunhao/student-management-system/compare/v0.1.4...v0.1.5) (2020-06-04)
+
+
+### Features
+
+* router基础 ([30e492b](https://github.com/imsunhao/student-management-system/commit/30e492b9b38c16977b02b0ddb7dceadd2ca1b078))
+* 完成 自动化-请求路由 基础 ([e8648c3](https://github.com/imsunhao/student-management-system/commit/e8648c325e922d62117816d56ef6e70c1c96f161))
+* 测试 使用依赖 增强依赖包 中 的类型 ([e1426ad](https://github.com/imsunhao/student-management-system/commit/e1426ad1aae487cb9ad5f95fd30d709f2d10fc0c))
+* 添加 todo list ([e178fcb](https://github.com/imsunhao/student-management-system/commit/e178fcbec5e61e276560519bdfaa4fa6a8f08a23))
+
+
+
 ## [0.1.4](https://github.com/imsunhao/student-management-system/compare/v0.1.4-alpha.0...v0.1.4) (2020-05-21)
 
 
