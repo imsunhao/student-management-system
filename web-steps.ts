@@ -34,7 +34,7 @@ const getConfig: GetUserConfig<T_INJECT_CONTEXT> = function({ resolve }) {
       },
       DLL: {
         Vue: 'vue',
-        Vuex: { name: 'vuex', refs: ['Vue'] },
+        Vuex: { name: '@imsunhao/vuex', refs: ['Vue'] },
         VueRouter: { name: 'vue-router', refs: ['Vue'] },
         Axios: 'axios',
         ElementUI: { name: 'element-ui', refs: ['Vue'] },

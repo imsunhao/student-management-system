@@ -1,7 +1,7 @@
 import { TStore } from 'store'
 
 import Vue from 'vue'
-import Vuex, { Store } from 'vuex'
+import Vuex, { Store } from '@imsunhao/vuex'
 
 import actions, { dispatch, TActions } from './actions'
 import mutations, { commit, getState, TMutations } from './mutations'

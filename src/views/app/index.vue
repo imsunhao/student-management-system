@@ -28,7 +28,7 @@
 <script lang="ts">
 import Vue from 'vue'
 import { Component } from 'vue-property-decorator'
-import { getState, getGetter } from 'src/store'
+import { getGetter } from 'src/store'
 import userButtonGroup from 'src/components/button-group/UserButtonGroup.vue'
 
 @Component({
@@ -43,7 +43,7 @@ export default class APP extends Vue {
   subTitle = '欢迎页面 222'
 
   get storeUser() {
-    return getState(this.$store, 'user')
+    return this.$store.state.user
   }
 
   get hasUser() {

@@ -1,5 +1,5 @@
 import { T_INJECT_CONTEXT } from '../inject-context/type'
-import { Store } from 'vuex'
+import { Store } from '@imsunhao/vuex'
 import { VUEX_DEVTOOL } from '@web-steps/helper-vuex'
 
 interface HostGlobal extends Window {

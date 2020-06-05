@@ -23,6 +23,7 @@
   },
   "homepage": "https://github.com/imsunhao/student-management-system#readme",
   "dependencies": {
+    "@imsunhao/vuex": "^3.3.0-alpha.1",
     "@web-steps/cli": "^0.2.0-alpha.4",
     "@web-steps/helper-api": "^0.2.0-alpha.4",
     "@web-steps/helper-assets": "^0.2.0-alpha.4",
@@ -40,8 +41,7 @@
     "express-session": "^1.17.1",
     "mongoose": "^5.9.12",
     "vue": "^2.6.10",
-    "vue-router": "^3.0.6",
-    "vuex": "^3.1.2"
+    "vue-router": "^3.0.6"
   },
   "devDependencies": {
     "@types/ali-oss": "^6.0.4",
@@ -77,6 +77,7 @@
     "typescript": "^3.8.3",
     "vue-eslint-parser": "^7.0.0",
     "vue-loader": "^15.9.0",
+    "vue-property-decorator": "^8.4.2",
     "vue-server-renderer": "^2.6.10",
     "vue-template-compiler": "^2.6.10",
     "webpack": "^4.30.0",
