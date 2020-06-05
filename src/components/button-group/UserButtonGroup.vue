@@ -28,7 +28,6 @@ export default {
       try {
         await dispatch(this.$store, 'FETCH_USER', {
           data: this.user,
-          ssr: undefined,
         })
         Message.success({ message: '登录成功', customClass: 'login-success' })
         if (this.$route.name === 'Home') {
@@ -40,7 +39,7 @@ export default {
     },
     async logout() {
       try {
-        await dispatch(this.$store, 'USER_LOGOUT', { ssr: undefined })
+        await dispatch(this.$store, 'USER_LOGOUT', {})
         Message.success({ message: '用户退出', customClass: 'logout-success' })
         if (this.$route.name !== 'Home') {
           this.$router.push({ name: 'Home' })

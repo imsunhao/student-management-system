@@ -19,12 +19,11 @@
 </template>
 
 <script lang="ts">
-import { User } from 'request'
 import { getState, getGetter } from 'src/store'
 import userButtonGroup from 'src/components/button-group/UserButtonGroup.vue'
 
 const createUser = () => {
-  const user: User.login = {
+  const user = {
     ID: '',
     password: '',
   }
