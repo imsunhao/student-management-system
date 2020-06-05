@@ -26,36 +26,36 @@
 </template>
 
 <script lang="ts">
-import userButtonGroup from 'src/components/button-group/UserButtonGroup.vue'
+import Vue from 'vue'
+import { Component } from 'vue-property-decorator'
 import { getState, getGetter } from 'src/store'
+import userButtonGroup from 'src/components/button-group/UserButtonGroup.vue'
 
-export default {
+@Component({
   components: {
     userButtonGroup,
   },
   pageInfo: {
     title: '学生管理系统',
   },
-  data() {
-    return {
-      subTitle: '欢迎页面 222',
-    }
-  },
-  computed: {
-    storeUser() {
-      return getState(this.$store, 'user')
-    },
-    hasUser() {
-      return getGetter(this.$store, 'hasUser')
-    },
-  },
-  methods: {
-    handleOpen(key, keyPath) {
-      console.log(key, keyPath)
-    },
-    handleClose(key, keyPath) {
-      console.log(key, keyPath)
-    },
-  },
+} as any)
+export default class APP extends Vue {
+  subTitle = '欢迎页面 222'
+
+  get storeUser() {
+    return getState(this.$store, 'user')
+  }
+
+  get hasUser() {
+    return getGetter(this.$store, 'hasUser')
+  }
+
+  handleOpen(key, keyPath) {
+    console.log(key, keyPath)
+  }
+
+  handleClose(key, keyPath) {
+    console.log(key, keyPath)
+  }
 }
 </script>
