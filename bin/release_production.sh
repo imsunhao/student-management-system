@@ -21,8 +21,8 @@ rsync -r ./bin $workspace/
 
 echo "操作 docker"
 
-docker-compose build
-docker-compose push
+cross-env DOCKER_TAG=$tag docker-compose build
+cross-env DOCKER_TAG=$tag docker-compose push
 
 echo "运行远程重启服务脚本"
 restart_script_path="$workdir/bin/restart.sh"

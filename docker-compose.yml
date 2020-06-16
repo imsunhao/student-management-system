@@ -14,7 +14,7 @@ services:
       - mongo
     depends_on:
       - mongo
-    image: imsunhao/student-management-system:${tag}
+    image: imsunhao/student-management-system:${DOCKER_TAG}
   mongo:
     hostname: mongo
     build:
@@ -27,4 +27,4 @@ services:
       - ./mongodb/data/log:/var/log/mongodb/\
     expose:
       - '27017'
-    image: imsunhao/mongo:${tag}
+    image: imsunhao/mongo:${DOCKER_TAG}

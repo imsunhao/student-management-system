@@ -6,5 +6,5 @@ workdir='/workspace/student-management-system'
 
 cd $workdir
 
-docker-compose pull
-docker-compose restart
+cross-env DOCKER_TAG=$tag docker-compose pull
+cross-env DOCKER_TAG=$tag docker-compose restart

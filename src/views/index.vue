@@ -15,6 +15,7 @@
       <h3>name: {{ storeUser.name }}</h3>
       <h3>role: {{ storeUser.role }}</h3>
     </div>
+    <h3>测试 docker-compose tag</h3>
   </div>
 </template>
 
