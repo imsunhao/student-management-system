@@ -1,3 +1,12 @@
+## [0.1.6-alpha.1](https://github.com/imsunhao/student-management-system/compare/v0.1.6-alpha.0...v0.1.6-alpha.1) (2020-06-16)
+
+
+### Features
+
+* 修正 docker-compose tag ([f6a00ff](https://github.com/imsunhao/student-management-system/commit/f6a00ffcbe956923f3e6ce89381e534e39f867a7))
+
+
+
 ## [0.1.6-alpha.0](https://github.com/imsunhao/student-management-system/compare/v0.1.5...v0.1.6-alpha.0) (2020-06-16)
 
 
