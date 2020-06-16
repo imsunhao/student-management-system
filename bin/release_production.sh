@@ -18,9 +18,11 @@ git push origin refs/tags/$tag
 echo "同步配置文件"
 rsync -r ./docker-compose.yml $workspace/
 rsync -r ./bin $workspace/
+rsync -r ./mongodb/mongo.env $workspace/mongodb/mongo.env
 
 echo "操作 docker"
 
+export DOCKER_TAG=$tag
 cross-env DOCKER_TAG=$tag docker-compose build
 cross-env DOCKER_TAG=$tag docker-compose push
 
