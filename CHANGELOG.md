@@ -1,3 +1,19 @@
+## [0.1.6-alpha.0](https://github.com/imsunhao/student-management-system/compare/v0.1.5...v0.1.6-alpha.0) (2020-06-16)
+
+
+### Bug Fixes
+
+* [ts] error ([59932f4](https://github.com/imsunhao/student-management-system/commit/59932f47b82f3afaac8b32b9b50cad72910870c7))
+
+
+### Features
+
+* docker 轻量化打包 使用 docer-compose tag ([57f49c1](https://github.com/imsunhao/student-management-system/commit/57f49c1345d245426e15ec11e6a8dcbc7c64b576))
+* 完善文档 ([e50ed84](https://github.com/imsunhao/student-management-system/commit/e50ed84fc61a542bb7e93318dcdcd8155ac65e9b))
+* 添加 团队代码风格设定 ([67f1752](https://github.com/imsunhao/student-management-system/commit/67f1752e70b35ccd496e665a9f9c470c0758e62c))
+
+
+
 ## [0.1.5](https://github.com/imsunhao/student-management-system/compare/v0.1.4...v0.1.5) (2020-06-04)
 
 
