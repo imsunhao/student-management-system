@@ -1,3 +1,12 @@
+## [0.1.6](https://github.com/imsunhao/student-management-system/compare/v0.1.6-alpha.1...v0.1.6) (2020-06-16)
+
+
+### Features
+
+* 调整 docker-compose restart 命令 ([300d6bd](https://github.com/imsunhao/student-management-system/commit/300d6bdcdf9f3be1f51ddda955dfd5621c78dd2f))
+
+
+
 ## [0.1.6-alpha.1](https://github.com/imsunhao/student-management-system/compare/v0.1.6-alpha.0...v0.1.6-alpha.1) (2020-06-16)
 
 
