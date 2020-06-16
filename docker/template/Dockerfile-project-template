@@ -1,18 +1,20 @@
+# 请在 template 文件 中 修改
+
 FROM node:12 as student-management-system
 
 ENV workspace=/student-management-system
 
 RUN mkdir -p $workspace
 
+VOLUME $workspace/node_modules
+
 WORKDIR $workspace
 
-COPY ./docker-bin/ $workspace/docker-bin/
-COPY ./dist $workspace/dist
-COPY ./src/index.template.html $workspace/src/
+# web-steps-copy-outlet
+COPY ./docker/bin/ $workspace/bin/
 COPY ./package*.json $workspace/
-COPY ./yarn.lock $workspace/
 COPY ./mongodb/mongo.env $workspace/mongodb/
 
 EXPOSE 8060
 
-CMD ["/bin/bash", "/student-management-system/docker-bin/start.sh"]
+CMD ["/bin/bash", "/student-management-system/bin/start.sh"]

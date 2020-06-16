@@ -5,6 +5,7 @@ tag=$1
 workdir='/workspace/student-management-system'
 workspace="root@aliyun:$workdir"
 
+echo "操作 git"
 git add *
 
 git commit -m "release:$tag"
@@ -16,20 +17,15 @@ git push origin refs/tags/$tag
 
 echo "同步配置文件"
 rsync -r ./docker-compose.yml $workspace/
-rsync -r ./Dockerfile-project $workspace/
-rsync -r ./.dockerignore $workspace/
-rsync -r ./package.json $workspace/
-rsync -r ./production.manifest.json $workspace/
 rsync -r ./bin $workspace/
-rsync -r ./docker-bin $workspace/
-rsync -r ./mongodb/initdb.d $workspace/mongodb/
-rsync -r ./mongodb/mongo.env $workspace/mongodb/
-rsync -r ./mongodb/mongod.conf $workspace/mongodb/
-rsync -r ./mongodb/Dockerfile-mongo $workspace/mongodb/
+
+echo "操作 docker"
+
+docker-compose build
+docker-compose push
 
 echo "运行远程重启服务脚本"
 restart_script_path="$workdir/bin/restart.sh"
-
-ssh root@aliyun -t "$restart_script_path"
+ssh root@aliyun -t "$restart_script_path $tag"
 
 npx ts-node ./scripts/dingding.ts --version=$tag

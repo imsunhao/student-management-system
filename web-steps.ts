@@ -51,6 +51,11 @@ const getConfig: GetUserConfig<T_INJECT_CONTEXT> = function({ resolve }) {
         },
       },
     },
+    docker: {
+      enable: true,
+      templatePath: resolve('docker/template/Dockerfile-project-template'),
+      outputPath: resolve('docker/Dockerfile-project'),
+    },
   }
 }
 

@@ -3,21 +3,23 @@ services:
   web-steps:
     build:
       context: .
-      dockerfile: Dockerfile-project
+      dockerfile: docker/Dockerfile-project
     environment:
       - DOCKER_ENV=true
+    volumes:
+      - ./node_modules:/student-management-system/node_modules
     ports:
       - '8060:8060'
     links:
       - mongo
     depends_on:
       - mongo
-    image: imsunhao/student-management-system
+    image: imsunhao/student-management-system:${tag}
   mongo:
     hostname: mongo
     build:
       context: .
-      dockerfile: mongodb/Dockerfile-mongo
+      dockerfile: docker/Dockerfile-mongo
     env_file:
       - ./mongodb/mongo.env
     volumes:
@@ -25,4 +27,4 @@ services:
       - ./mongodb/data/log:/var/log/mongodb/\
     expose:
       - '27017'
-    image: imsunhao/mongo
+    image: imsunhao/mongo:${tag}

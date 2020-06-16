@@ -808,23 +808,23 @@
   optionalDependencies:
     prettier "^1.18.2"
 
-"@web-steps/cli@^0.2.0-alpha.4":
-  version "0.2.0-alpha.4"
-  resolved "https://registry.yarnpkg.com/@web-steps/cli/-/cli-0.2.0-alpha.4.tgz#220f496913dc8bccde294b90d7f357e90fa4b4df"
-  integrity sha512-YbUYyMl53ViyPHYx3Ibs5q+jREDOLiWZ4rmqBhUM0Ub65FhlRLAzZOfB0ujfDK03+tRy6JWAOT+xhyTMgxN5bA==
+"@web-steps/cli@^0.2.1-alpha.0":
+  version "0.2.1-alpha.0"
+  resolved "https://registry.npmjs.org/@web-steps/cli/-/cli-0.2.1-alpha.0.tgz#c4e81272316f7ab7a87a576c618e2e93c4adc221"
+  integrity sha512-aZlKbn5GVX6hEwPo5CE2zOD/XiKLYxUOmFf4p4WSPJ0xwtQBYovqJZcdXwSw7fJAeEaHBBGn+Xx/FMXoV2IdNA==
 
-"@web-steps/compiler@^0.2.0-alpha.4":
-  version "0.2.0-alpha.4"
-  resolved "https://registry.yarnpkg.com/@web-steps/compiler/-/compiler-0.2.0-alpha.4.tgz#ee127776042480e973b7e5025bae9789b901771d"
-  integrity sha512-MKIIX8Xm/bo1C7PtU8dAaNdoojvQEFDnxqLSIVI+mPomSg3hzoGP/jBbElZeNPb+OJ2cJAYQP/CcBCi7C4sl8Q==
+"@web-steps/compiler@^0.2.1-alpha.0":
+  version "0.2.1-alpha.0"
+  resolved "https://registry.npmjs.org/@web-steps/compiler/-/compiler-0.2.1-alpha.0.tgz#2d4cb34369d59d2df44a03f03798f64412c15bfc"
+  integrity sha512-Bvu5xio5CkD9lUvQVSiR92ttvKVU011Png8Z2PYGG3i9RKYQCmZ9EykwHNlk7DeDgzWG0EHd0T4lUq6KcB4Apg==
   dependencies:
     memory-fs "^0.5.0"
     require-from-string "^2.0.2"
 
-"@web-steps/config@^0.2.0-alpha.4":
-  version "0.2.0-alpha.4"
-  resolved "https://registry.yarnpkg.com/@web-steps/config/-/config-0.2.0-alpha.4.tgz#a69ad8c4085f83e8c694b72ead7779b39678441e"
-  integrity sha512-s3is8R4uaBw0lMxBOATU+QAt+QYHLjeTWRDbvJouf3HA0Xl1ssoJNO1dGuwBtuqiCLJBZmeABxENgdzuqIBxLw==
+"@web-steps/config@^0.2.1-alpha.0":
+  version "0.2.1-alpha.0"
+  resolved "https://registry.npmjs.org/@web-steps/config/-/config-0.2.1-alpha.0.tgz#b183b9e279f41c7b10aa5b36bd2e904a9562c46e"
+  integrity sha512-S4Ey6/i1g2JN/xPsOr78BLfeGD8/I5VU6VcmJgDIgbjT8mRhvoxG1k9JoC7JZ6UIHPYF87KFaaaPMKEPbK08gw==
   dependencies:
     "@types/express" "^4.17.2"
     "@types/terser-webpack-plugin" "^2.2.0"
@@ -848,64 +848,64 @@
     webpack-merge "^4.2.2"
     webpack-node-externals "^1.7.2"
 
-"@web-steps/helper-api@^0.2.0-alpha.4":
-  version "0.2.0-alpha.4"
-  resolved "https://registry.yarnpkg.com/@web-steps/helper-api/-/helper-api-0.2.0-alpha.4.tgz#c074d22c3ff202be0cc4b327fb314a5b3dc4ebbc"
-  integrity sha512-j0nKZbmh8OJhjDOtU0xPR07TIyHzw3iRM7DbbmfTPcZ/TY6Qch9C4LrwXP49/d74wjy4BJ3Jt975FsogNfwsrQ==
+"@web-steps/helper-api@^0.2.1-alpha.0":
+  version "0.2.1-alpha.0"
+  resolved "https://registry.npmjs.org/@web-steps/helper-api/-/helper-api-0.2.1-alpha.0.tgz#42932c2ab79edab7faea972598e2bfd49ade46d1"
+  integrity sha512-cRiz5a/FRKHnIukMSY3GE1KX254bujRnpNFYBxrtv3qH7xT88AXG2gLBKIwH/UsJGLETyUTVyz2REi9/2v/lVg==
 
-"@web-steps/helper-assets@^0.2.0-alpha.4":
-  version "0.2.0-alpha.4"
-  resolved "https://registry.yarnpkg.com/@web-steps/helper-assets/-/helper-assets-0.2.0-alpha.4.tgz#74aae0a8fd50e14eabcc9fcd8545b055b295e27f"
-  integrity sha512-CviouSpX+4CoWFDpsxjX66pvf2K//+Sdk7y2zGWkhLbg0bq0b8u9h7RRVjhSJ9nV41KSo+HWLAQE2BTJpuhChA==
+"@web-steps/helper-assets@^0.2.1-alpha.0":
+  version "0.2.1-alpha.0"
+  resolved "https://registry.npmjs.org/@web-steps/helper-assets/-/helper-assets-0.2.1-alpha.0.tgz#7be6917b829904c927cb39eb001fb3d387c71d2b"
+  integrity sha512-4azKwPhgsKLK+qR7axDBaIQGBxEfYMrx7GubAK1TatG/Smcb6s9PCUo4w6ML4Oyk8BE20f3Le9AgVANmnQLsaw==
 
-"@web-steps/helper-release@^0.2.0-alpha.4":
-  version "0.2.0-alpha.4"
-  resolved "https://registry.yarnpkg.com/@web-steps/helper-release/-/helper-release-0.2.0-alpha.4.tgz#dd9ba38163c0f1acee421d98cc2d2a057a6f982d"
-  integrity sha512-Sy3hT0QAFmI1g8h3FhrjbaCS8xtDp4fUZuj8PG4QB5jMDUxibjDhbK9kNu0+HyxPpIe3pImW0iGmVn+v+ylDFQ==
+"@web-steps/helper-release@^0.2.1-alpha.0":
+  version "0.2.1-alpha.0"
+  resolved "https://registry.npmjs.org/@web-steps/helper-release/-/helper-release-0.2.1-alpha.0.tgz#bec3f0c7f575109e1d22505b4684965cb2320f1c"
+  integrity sha512-ojfcM9OtiHJKbkb7lU2VpAOagAGX2F7sf7a8CKVpmjiwBO5Pj39OnNgPdj3/E7RHhdKflS7pbXKY1A3nt0QpEw==
 
-"@web-steps/helper-view-router@^0.2.0-alpha.4":
-  version "0.2.0-alpha.4"
-  resolved "https://registry.yarnpkg.com/@web-steps/helper-view-router/-/helper-view-router-0.2.0-alpha.4.tgz#509c90d3860d9a5b3237a87e3d469954080419e3"
-  integrity sha512-gy+IdEMDOcQPllg0brejXg//rFBOteVEfbz0tetsdwpUaYy2efLg78nMv5qq6/dzzH1Nvu+HmvYSyWM5724S7A==
+"@web-steps/helper-view-router@^0.2.1-alpha.0":
+  version "0.2.1-alpha.0"
+  resolved "https://registry.npmjs.org/@web-steps/helper-view-router/-/helper-view-router-0.2.1-alpha.0.tgz#41d1d5d33ed9d99e4fcf1bcf6cb2d7d263487007"
+  integrity sha512-PBJ6tqlAlOGweqXsyzFUIh6FSDppkk996uwjF5cF9AW53oBiQOvsopWeOWMmWPFN7Eblf7gSNA+P0ry1LTaODg==
 
-"@web-steps/helper-vue-router@^0.2.0-alpha.4":
-  version "0.2.0-alpha.4"
-  resolved "https://registry.yarnpkg.com/@web-steps/helper-vue-router/-/helper-vue-router-0.2.0-alpha.4.tgz#09e140867b19569dd3d3c2f9a108a4966899c28f"
-  integrity sha512-EnXWHv9sAFX0fV0eMF2kVke2g6xKugukNLHWCqK/FdbA3OVmuQSE3rcqg0TH0BTIMEB+04tM3QDTtKnZxR0Wlw==
+"@web-steps/helper-vue-router@^0.2.1-alpha.0":
+  version "0.2.1-alpha.0"
+  resolved "https://registry.npmjs.org/@web-steps/helper-vue-router/-/helper-vue-router-0.2.1-alpha.0.tgz#0e1fc184e09f254a4e41b8a6293d19406234cb17"
+  integrity sha512-wdWbQuRUlGKR5Ky1DYe09w4zBjXjzZgsZEbkNyGDW5rTiCik7MYdAt/gapz7GJwPH8BZlApXYqSky+4Nbjs/DQ==
 
-"@web-steps/helper-vuex@^0.2.0-alpha.4":
-  version "0.2.0-alpha.4"
-  resolved "https://registry.yarnpkg.com/@web-steps/helper-vuex/-/helper-vuex-0.2.0-alpha.4.tgz#0eef1a9690713cf6a154f172a88d9f9aa274b73c"
-  integrity sha512-+j7zJYPQ9u3/BTQIAM6oqN72kgWkZGL0OEvBqMhx088++5uITU6C/I5K9mMS4DxXptEtc/lpLQekNXhUqWCbYA==
+"@web-steps/helper-vuex@^0.2.1-alpha.0":
+  version "0.2.1-alpha.0"
+  resolved "https://registry.npmjs.org/@web-steps/helper-vuex/-/helper-vuex-0.2.1-alpha.0.tgz#dd51d855c070a103ae3971a99fd8b41e6847c54b"
+  integrity sha512-jt6OTQZgzvX/5l9HwdVKO5Ao6tFeuR5ymtjDE6es+3O3LnxWTAHpnzX6Q31KkSlE6pkSXQuVS71DwCZcKDZlMA==
 
-"@web-steps/helper-webpack@^0.2.0-alpha.4":
-  version "0.2.0-alpha.4"
-  resolved "https://registry.yarnpkg.com/@web-steps/helper-webpack/-/helper-webpack-0.2.0-alpha.4.tgz#f708f70ad9ba905adf3f91ea9dc3e5208b21bc5d"
-  integrity sha512-4zJt5JIXbRwZEHP7kUkT+CYLYtaqisALVfUN59NiIUhcWWGBU9bS12KwY3YY4qoxkY9kbF9oBmivulm9LfRj/w==
+"@web-steps/helper-webpack@^0.2.1-alpha.0":
+  version "0.2.1-alpha.0"
+  resolved "https://registry.npmjs.org/@web-steps/helper-webpack/-/helper-webpack-0.2.1-alpha.0.tgz#7ae86acbeca826fb30157994ccafa68ffaae387f"
+  integrity sha512-ZUD74I7tdSFFdk+kWEMqP65kuB1EFSF374cb4YbvFb7MLM5wPx6TKlfPfbowNnWRW4D08X91ZJdLOmZfKfmn2w==
 
-"@web-steps/oss@0.2.0-alpha.4", "@web-steps/oss@^0.2.0-alpha.4":
-  version "0.2.0-alpha.4"
-  resolved "https://registry.yarnpkg.com/@web-steps/oss/-/oss-0.2.0-alpha.4.tgz#e67b64dfef5e37a2713f63f941c94324896197d5"
-  integrity sha512-fkDP4gxmGpmyEdpiFmxnyh+XMNMYSJz5YUInMZrJ8hMz2UmHHdp4q75OrBkXTWjczNL6ntNiiFbmCFLWrxBMTA==
+"@web-steps/oss@0.2.1-alpha.0", "@web-steps/oss@^0.2.1-alpha.0":
+  version "0.2.1-alpha.0"
+  resolved "https://registry.npmjs.org/@web-steps/oss/-/oss-0.2.1-alpha.0.tgz#16e1d88cad209870cbdca33078f05d6b871bfda0"
+  integrity sha512-qCi35PYAs11MPKL8K9Kpeu8acWhzwerix60aSpVp9xlEFRVrPeeZD1kMr8HBsiHqjEOZvWBf2+Oj4vB/vwpcjA==
   dependencies:
     ali-oss "^6.5.1"
     co "^4.6.0"
 
-"@web-steps/release@^0.2.0-alpha.4":
-  version "0.2.0-alpha.4"
-  resolved "https://registry.yarnpkg.com/@web-steps/release/-/release-0.2.0-alpha.4.tgz#87f6baee3dad777f00192816a6674ed2c351f085"
-  integrity sha512-W6VjqzO0b7e7Wn16WywxzkZCBuK/7H41zVG8xaXofRDrW3iAunRKc8sUHl1DBXIvWC9z5v68I+Mz3gBRSJYOPg==
+"@web-steps/release@^0.2.1-alpha.0":
+  version "0.2.1-alpha.0"
+  resolved "https://registry.npmjs.org/@web-steps/release/-/release-0.2.1-alpha.0.tgz#39421d8378b66c32bc9a866d93f6624a742cae7e"
+  integrity sha512-z9ZWXfCXTy5F3Em0SSvkjGTBhXxvARJVd4UYJNu3ZxVS0Cbr2DNl/eGuQSPjzJ6DtSGKdTBOhK1BIYKg6PsmzQ==
   dependencies:
-    "@web-steps/oss" "0.2.0-alpha.4"
+    "@web-steps/oss" "0.2.1-alpha.0"
     conventional-changelog-cli "^2.0.31"
     enquirer "^2.3.4"
     execa "^4.0.0"
     semver "^7.1.3"
 
-"@web-steps/server@^0.2.0-alpha.4":
-  version "0.2.0-alpha.4"
-  resolved "https://registry.yarnpkg.com/@web-steps/server/-/server-0.2.0-alpha.4.tgz#dbd11d40742c7f799a97450e43994811bda5196e"
-  integrity sha512-LhqioqANa5ex/XHtgtzxEiNO4K+ORtQ53f/8kwvK4Kgo+zj1bTUq+AKVFla3geJTyO2Hay5zb1myfxOM5xzXcQ==
+"@web-steps/server@^0.2.1-alpha.0":
+  version "0.2.1-alpha.0"
+  resolved "https://registry.npmjs.org/@web-steps/server/-/server-0.2.1-alpha.0.tgz#f2e2da62b9697659d9aa2be8ae7ffac21ee8e795"
+  integrity sha512-aDEVMo9roiQBw6dGyTPf+Lhlj01t3m//h3vZoQQsd+UV6g8D40t6jbxzzVbOanDfJ9GX1Man/CnVmSmxWs9llw==
   dependencies:
     base64url "^3.0.1"
     express "^4.17.1"

@@ -1,0 +1,24 @@
+# 请在 template 文件 中 修改
+
+FROM node:12 as student-management-system
+
+ENV workspace=/student-management-system
+
+RUN mkdir -p $workspace
+
+VOLUME $workspace/node_modules
+
+WORKDIR $workspace
+
+COPY dist/web-steps/start-config.js $workspace/dist/web-steps/start-config.js
+COPY src/index.template.html $workspace/src/index.template.html
+COPY dist/web-steps/vue-ssr-client-manifest.json $workspace/dist/web-steps/vue-ssr-client-manifest.json
+COPY dist/web-steps/vue-ssr-server-bundle.json $workspace/dist/web-steps/vue-ssr-server-bundle.json
+
+COPY ./docker/bin/ $workspace/bin/
+COPY ./package*.json $workspace/
+COPY ./mongodb/mongo.env $workspace/mongodb/
+
+EXPOSE 8060
+
+CMD ["/bin/bash", "/student-management-system/bin/start.sh"]
