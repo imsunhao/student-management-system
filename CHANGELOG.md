@@ -1,3 +1,12 @@
+## [0.1.7](https://github.com/imsunhao/student-management-system/compare/v0.1.6...v0.1.7) (2020-06-16)
+
+
+### Features
+
+* 添加 tslib 支持 typescript 编译后运行 ([e60e067](https://github.com/imsunhao/student-management-system/commit/e60e06733ef405a5d371d2cd9f9c3a02cd6f3f49))
+
+
+
 ## [0.1.6](https://github.com/imsunhao/student-management-system/compare/v0.1.6-alpha.1...v0.1.6) (2020-06-16)
 
 
