@@ -1,3 +1,12 @@
+## [0.1.8](https://github.com/imsunhao/student-management-system/compare/v0.1.8-alpha.0...v0.1.8) (2020-06-17)
+
+
+### Features
+
+* 调整 release 命令 ([d5ffb5c](https://github.com/imsunhao/student-management-system/commit/d5ffb5c7475cf4659166566c9fe3ff6993a7c03f))
+
+
+
 ## [0.1.8-alpha.0](https://github.com/imsunhao/student-management-system/compare/v0.1.7...v0.1.8-alpha.0) (2020-06-17)
 
 
