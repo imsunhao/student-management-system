@@ -1,3 +1,13 @@
+## [0.1.8-alpha.0](https://github.com/imsunhao/student-management-system/compare/v0.1.7...v0.1.8-alpha.0) (2020-06-17)
+
+
+### Features
+
+* 初步完成 docker 轻量化打包 ([e02b957](https://github.com/imsunhao/student-management-system/commit/e02b957f43b0d7244df4c336b306410fbbd937a9))
+* 测试 阿里云 docker 加速方案 ([e09e7b7](https://github.com/imsunhao/student-management-system/commit/e09e7b72a11ebd5f262c09b5adaaca520c28857e))
+
+
+
 ## [0.1.7](https://github.com/imsunhao/student-management-system/compare/v0.1.6...v0.1.7) (2020-06-16)
 
 
