@@ -79,3 +79,4 @@
 - [x] 自动化 请求路由
 - [] 自动化路由
 - [x] docker 轻量化打包 -> 不使用 docker update 的方式
+- [] docker 加速
