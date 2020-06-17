@@ -68,6 +68,8 @@
 
 ### 如何上线
 
+1. 如果 要新建一个 docker 仓库 注意替换 docker-compose.yml 仓库地址
+1. 如果 要部署到新机器上 注意替换 release_production.sh 服务器地址
 1. 启动 发布命令
 
    ```bash
@@ -77,6 +79,6 @@
 ### TODO
 
 - [x] 自动化 请求路由
-- [] 自动化路由
+- [ ] 自动化路由
 - [x] docker 轻量化打包 -> 不使用 docker update 的方式
-- [] docker 加速
+- [x] docker 加速 使用阿里云容器镜像服务
