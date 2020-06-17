@@ -20,11 +20,11 @@ rsync -r ./docker-compose.yml $workspace/
 rsync -r ./bin $workspace/
 rsync -r ./mongodb/mongo.env $workspace/mongodb/mongo.env
 
-echo "操作 docker"
+echo "操作 docker 需要 ROOT 权限"
 
 export DOCKER_TAG=$tag
-cross-env DOCKER_TAG=$tag docker-compose build
-cross-env DOCKER_TAG=$tag docker-compose push
+sudo docker-compose build
+sudo docker-compose push
 
 echo "运行远程重启服务脚本"
 restart_script_path="$workdir/bin/restart.sh"
