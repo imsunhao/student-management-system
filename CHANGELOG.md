@@ -1,3 +1,12 @@
+## [0.1.9](https://github.com/imsunhao/student-management-system/compare/v0.1.8...v0.1.9) (2020-06-17)
+
+
+### Features
+
+* 只有 docker-compose push 需要 root权限 ([3fee906](https://github.com/imsunhao/student-management-system/commit/3fee9066fd27357222841c884ee25b5a8d83e1c8))
+
+
+
 ## [0.1.8](https://github.com/imsunhao/student-management-system/compare/v0.1.8-alpha.0...v0.1.8) (2020-06-17)
 
 
