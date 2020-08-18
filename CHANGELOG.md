@@ -1,3 +1,17 @@
+## [0.1.10](https://github.com/imsunhao/student-management-system/compare/v0.1.9...v0.1.10) (2020-08-18)
+
+
+### Bug Fixes
+
+* 修复 单元测试 中 STATIC_HOST 错误 ([80b76ab](https://github.com/imsunhao/student-management-system/commit/80b76ab4427e18e0b13f7ee6fe6b916a424fb9a8))
+
+
+### Features
+
+* 修改 README ([043757c](https://github.com/imsunhao/student-management-system/commit/043757c009f596bab1fa3eeab287d6ccae1bc4c6))
+
+
+
 ## [0.1.9](https://github.com/imsunhao/student-management-system/compare/v0.1.8...v0.1.9) (2020-06-17)
 
 
