@@ -10,6 +10,8 @@ if (isServer) {
   Vue.mixin(ServerVuePageInfoMixin)
 }
 
+Vue.config.silent = true
+
 Vue.use(ElementUI)
 
 /**

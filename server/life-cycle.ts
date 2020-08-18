@@ -2,7 +2,7 @@
 import { GetUserServerConfig } from '@web-steps/config'
 import { T_INJECT_CONTEXT } from '../inject-context/type'
 import { TServerContext, TAPP } from '@web-steps/server'
-import { isProduction, requrieENVConfig } from './env'
+import { isProduction, requrieENVConfig, isTest } from './env'
 import { mongooseInit } from './mongo'
 import { createRouter } from 'server/router'
 import bodyParser from 'body-parser'
@@ -61,7 +61,7 @@ const getServerConfig: GetUserServerConfig = ({ resolve }) => {
     },
     renderContext(context: TServerContext<T_INJECT_CONTEXT>) {
       const result: any = context
-      result.STATIC_HOST = isProduction ? context.injectContext.STATIC_HOST : ''
+      result.STATIC_HOST = isProduction && !isTest ? context.injectContext.STATIC_HOST : ''
     },
     beforeRender(req, res, next) {
       let userInfo = ''
