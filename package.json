@@ -67,7 +67,7 @@
     "eslint-plugin-vue": "^6.2.1",
     "execa": "^4.0.0",
     "jest": "^25.0.0",
-    "minimist": "^1.2.5",
+    "minimist": "^1.2.6",
     "normalize.css": "^8.0.1",
     "null-loader": "^3.0.0",
     "puppeteer-core": "^3.0.4",
